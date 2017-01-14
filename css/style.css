@@ -1,0 +1,70 @@
+.table {
+  border-radius: 10px;
+  border: 2px solid #000000;
+  overflow: hidden;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.row {
+  display: table;
+  width: 100%;
+}
+
+.cell {
+  display: table-cell;
+  border-left: 1px solid #000000;
+  border-top: 1px solid #000000;
+}
+
+.cell:first-child {
+  border-left: none;
+}
+
+.row:first-child .cell {
+  border-top: none;
+}
+
+.label {
+  background: #CCCCCC;
+}
+
+.pc_name.label {
+  width: 150px;
+}
+
+.pc_name.data {
+  width: 200px;
+}
+
+.pl_name.label {
+  width: 150px;
+}
+
+.pl_name.data {
+  /*width: 100%;*/
+}
+
+.V_level.label {
+  width: 150px;
+}
+
+.V_level.data {
+  width: 200px;
+}
+
+.class_name.label {
+  width: 150px;
+}
+
+.class_name.datagroup {
+  width: 200px;
+}
+
+.type_id.label {
+  width: 150px;
+}
+
+.type_id.datagroup {
+  /*width: 200px;*/
+}
