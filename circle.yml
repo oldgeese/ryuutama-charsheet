@@ -4,3 +4,12 @@ test:
 compile:
   override:
     - npm run build
+general:
+  artifacts:
+    - "dist/bundle.js" # webpack-ed javascript
+    - react.html # main page react version
+    - ryutama.html # main page jQuery version
+    - "js/ryutama.js" # js file for main page jQuery version
+  branches:
+    ignore:
+      - gh-pages
