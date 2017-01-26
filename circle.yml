@@ -10,6 +10,7 @@ general:
     - react.html # main page react version
     - ryutama.html # main page jQuery version
     - "js/ryutama.js" # js file for main page jQuery version
+    - "css/style.css" # CSS
   branches:
     ignore:
       - gh-pages
