@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import request from 'superagent';
+import jsonp from 'superagent-jsonp';
 
 const url = "http://charasheet.vampire-blood.net/962930.json";
 
