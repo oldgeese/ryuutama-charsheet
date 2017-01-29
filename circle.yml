@@ -26,4 +26,4 @@ deployment:
   staging:
     branch: master
     commands:
-      - cd netlify && netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
+      - netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
