@@ -8,14 +8,8 @@ compile:
     - mkdir netlify
     - cp -a dist netlify/
     - cp -a css netlify/
-    - cp react.html netlify/
+    - cp react.html netlify/index.html
 general:
-  artifacts:
-    - "dist/bundle.js" # webpack-ed javascript
-    - react.html # main page react version
-    - ryutama.html # main page jQuery version
-    - "js/ryutama.js" # js file for main page jQuery version
-    - "css/style.css" # CSS
   branches:
     only:
       - master
