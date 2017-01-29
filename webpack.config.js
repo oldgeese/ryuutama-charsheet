@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry:"./js/ryutama-react.jsx",
+  entry:"./js/app.jsx",
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
