@@ -4,6 +4,11 @@ test:
 compile:
   override:
     - npm run build
+  post:
+    - mkdir netlify
+    - cp -a dist netlify/
+    - cp -a css netlify/
+    - cp react.html netlify/
 general:
   artifacts:
     - "dist/bundle.js" # webpack-ed javascript
@@ -12,5 +17,13 @@ general:
     - "js/ryutama.js" # js file for main page jQuery version
     - "css/style.css" # CSS
   branches:
-    ignore:
-      - gh-pages
+    only:
+      - master
+machine:
+  pre:
+    - npm install netlify-cli -g
+deployment:
+  staging:
+    branch: master
+    commands:
+      - cd netlify && netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
