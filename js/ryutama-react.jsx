@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import request from 'superagent';
 import jsonp from 'superagent-jsonp';
 
-const url = "http://charasheet.vampire-blood.net/962930.json";
-const timeout = 5000;
+const baseUrl = "https://pure-anchorage-83238.herokuapp.com/";
+const charId = "962930";
+const postfix = ".json"
+const url = baseUrl + charId + postfix;
+const timeout = 8000;
 
 const type = {
   0: "",
