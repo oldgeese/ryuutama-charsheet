@@ -1,8 +1,8 @@
 {
-  "name": "ryutama",
+  "name": "ryutama-charsheet",
   "version": "1.0.0",
   "description": "",
-  "main": "ajax.html",
+  "main": "js/app.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "axios": "^0.15.3",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
@@ -18,18 +17,17 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "html-webpack-plugin": "^2.24.1",
-    "jquery": "^3.1.1",
     "json-loader": "^0.5.4",
     "material-ui": "^0.16.6",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "redux": "^3.6.0",
     "redux-devtools": "^3.3.1",
-    "webpack": "^2.2.0",
-    "superagent": "^3.4.0",
-    "superagent-jsonp": "^0.1.1"
+    "webpack": "^2.2.0"
   },
   "dependencies": {
-    "react-redux": "^5.0.1"
+    "react-redux": "^5.0.1",
+    "superagent": "^3.4.0",
+    "superagent-jsonp": "^0.1.1"
   }
 }
