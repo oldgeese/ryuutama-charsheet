@@ -35,6 +35,7 @@ function Ryudata(props) {
 
 function RyutamaHeader(props) {
   return (
+    <div>
     <Ryutable>
       <Ryurow>
         <Ryulabel className="ryujin_name">竜人名</Ryulabel>
@@ -47,6 +48,7 @@ function RyutamaHeader(props) {
         <Ryudata className="created_date"></Ryudata>
       </Ryurow>
     </Ryutable>
+    </div>
   );
 }
 
@@ -55,6 +57,7 @@ class RyutamaSheet extends React.Component {
   render() {
     const d = this.props.data;
     return (
+      <div>
       <RyutamaHeader />
       <div className="table">
       <div className="row">
@@ -78,6 +81,7 @@ class RyutamaSheet extends React.Component {
         <div className="cell datagroup class_name"><span className="data class_name">{d.class_name}</span>/<span className="data class2_name">{d.class2_name}</span></div>
         <div className="cell label type_id">タイプ</div>
         <div className="cell datagroup type_id"><span className="data type_id">{type[d.type_id]}</span>/<span className="data type2">{type[d.type2]}</span></div>
+      </div>
       </div>
       </div>
     );
