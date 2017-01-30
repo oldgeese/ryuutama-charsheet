@@ -48,9 +48,9 @@ function RyutamaHeader(props) {
   return (
     <div className="ryutama-header">
     <RyutamaSheetTitle>
-      <div class="ryutama-title">りゅう🐉たま</div>
-      <div class="ryutama-title-english">natural fantasy R.P.G</div>
-      <div class="traveler-character-sheet">旅人キャラクターシート</div>
+      <div className="ryutama-title">りゅう🐉たま</div>
+      <div className="ryutama-title-english">natural fantasy R.P.G</div>
+      <div className="traveler-character-sheet">旅人キャラクターシート</div>
       <div>
       <Ryutable className="ryujin_name">
         <Ryurow className="ryujin_name">
