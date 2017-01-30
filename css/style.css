@@ -4,6 +4,7 @@
   overflow: hidden;
   border-collapse: separate;
   width: 100%;
+  margin: 5px;
 }
 
 .row {
@@ -27,6 +28,7 @@
 
 .label {
   background: #CCCCCC;
+  text-align: center;
 }
 
 .pc_name.label {
@@ -34,7 +36,7 @@
 }
 
 .pc_name.data {
-  width: 200px;
+  width: 650px;
 }
 
 .pl_name.label {
@@ -53,6 +55,22 @@
   width: 200px;
 }
 
+.exp_his_sum.label, .sex.label, .age.label {
+  width: 120px;
+}
+
+.exp_his_sum.data {
+
+}
+
+.sex.data {
+
+}
+
+.age.label {
+
+}
+
 .class_name.label {
   width: 150px;
 }
@@ -67,4 +85,32 @@
 
 .type_id.datagroup {
   /*width: 200px;*/
+}
+
+.table.ryujin_name, .table.created_date {
+  display:inline-block;
+  width:200px;
+}
+
+.label.ryujin_name, .label.created_date {
+  width:80px;
+}
+
+.figure-area {
+  display: inline-block;
+  width: 300px;
+  height: 200px;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: black;
+}
+
+.title-area {
+  display:inline-block;
+  width:500px;
+  height:200px;
+}
+
+.ryutama-header {
+  height:210px;
 }
