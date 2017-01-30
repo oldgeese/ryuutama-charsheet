@@ -1,6 +1,4 @@
-test:
-  override:
-    - echo "skip test"
+
 compile:
   override:
     - npm run build
@@ -10,14 +8,17 @@ compile:
     - cp -a css netlify/
     - cp react.html netlify/index.html
 general:
+  artifacts:
+    - package.json
   branches:
     only:
       - master
 machine:
   pre:
-    - npm install netlify-cli -g
+    - npm install netlify-cli --save-dev
+    - npm install --save-dev jest babel-jest babel-preset-es2015 babel-preset-react react-test-renderer enzyme react-addons-test-utils
 deployment:
   staging:
     branch: master
     commands:
-      - netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
+      - ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN

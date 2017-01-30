@@ -1,10 +1,10 @@
 {
   "name": "ryutama-charsheet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Japanese TRPG, Ryuutama, Character sheet's layout concersion app.",
   "main": "js/app.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack"
   },
   "author": "",
