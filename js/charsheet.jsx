@@ -45,7 +45,7 @@ function RyuCharFigure(props) {
 }
 
 function RyutamaClass(props) {
-  const d = this.props.data;
+  const d = props.data;
   return (
     <Ryutable className="class">
       <Ryurow className="class-header">
