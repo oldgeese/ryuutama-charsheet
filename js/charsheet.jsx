@@ -44,12 +44,25 @@ function RyuCharFigure(props) {
   );
 }
 
+function RyutamaClass(props) {
+  const d = this.props.data;
+  return (
+    <Ryutable className="class">
+      <Ryurow className="class-header">
+        <Ryulabel className="class-ability">クラス能力</Ryulabel>
+        <Ryulabel className="class-check-ability">判定能力値</Ryulabel>
+        <Ryulabel className="class-effect">効果</Ryulabel>
+      </Ryurow>
+    </Ryutable>
+  );
+}
+
 function RyutamaHeader(props) {
   return (
     <div className="ryutama-header">
     <RyutamaSheetTitle>
       <div className="ryutama-title">りゅう🐉たま</div>
-      <div className="ryutama-title-english">natural fantasy R.P.G</div>
+      <div className="ryutama-title-english">natural fantasy R.P.G.</div>
       <div className="traveler-character-sheet">旅人キャラクターシート</div>
       <div>
       <Ryutable className="ryujin_name">
@@ -76,7 +89,7 @@ class RyutamaSheet extends React.Component {
   render() {
     const d = this.props.data;
     return (
-      <div>
+      <div className="page">
       <RyutamaHeader />
       <div className="table">
       <div className="row">
@@ -102,6 +115,7 @@ class RyutamaSheet extends React.Component {
         <div className="cell datagroup type_id"><span className="data type_id">{type[d.type_id]}</span>/<span className="data type2">{type[d.type2]}</span></div>
       </div>
       </div>
+      <RyutamaClass data={d}/>
       </div>
     );
   }

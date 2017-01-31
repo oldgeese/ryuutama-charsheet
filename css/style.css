@@ -114,3 +114,11 @@
 .ryutama-header {
   height:210px;
 }
+
+@page {
+  size: B5 portrait;
+}
+
+.page {
+  break-after: always;
+}
