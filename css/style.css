@@ -1,3 +1,20 @@
+@media print {
+  .page {
+    page-break-after: always;
+    width: 182mm;
+    height: 257mm;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+}
+
+html {
+  background-color: #EEE;
+}
+
 body {
   margin:0;
   font-size: 80%;
@@ -16,110 +33,15 @@ div {
   box-sizing: border-box;
 }
 
-.table {
-  border-radius: 10px;
-  border: 2px solid #000000;
-  overflow: hidden;
-  border-collapse: separate;
-  width: 100%;
-  margin-top: 5px;
+
+@page {
+  size: B5 portrait;
 }
 
-.row {
-  display: table;
-  width: 100%;
-}
-
-.cell {
-  display: table-cell;
-  border-left: 1px solid #000000;
-  border-top: 1px solid #000000;
-}
-
-.cell:first-child {
-  border-left: none;
-}
-
-.row:first-child .cell {
-  border-top: none;
-}
-
-.label {
-  background: #CCCCCC;
-  text-align: center;
-}
-
-.pc_name.label {
-  width: 150px;
-}
-
-.pc_name.data {
-  width: 650px;
-}
-
-.pl_name.label {
-  width: 150px;
-}
-
-.pl_name.data {
-  /*width: 100%;*/
-}
-
-.V_level.label {
-  width: 150px;
-}
-
-.V_level.data {
-  width: 200px;
-}
-
-.exp_his_sum.label, .sex.label, .age.label {
-  width: 120px;
-}
-
-.exp_his_sum.data {
-
-}
-
-.sex.data {
-
-}
-
-.age.label {
-
-}
-
-.class_name.label {
-  width: 150px;
-}
-
-.class_name.datagroup {
-  width: 200px;
-}
-
-.type_id.label {
-  width: 150px;
-}
-
-.type_id.datagroup {
-  /*width: 200px;*/
-}
-
-.table.ryujin_name,.table.created_date {
-  display:inline-block;
-  width: 47%;
-}
-
-.table.ryujin_name {
-  margin-right: 5px;
-}
-
-.table.created_date {
-  margin-left: 5px;
-}
-
-.label.ryujin_name,.label.created_date {
-  width: 46%;
+.page {
+  background-color: #FFF;
+  width: calc(182mm);
+  height: calc(257mm);
 }
 
 .figure-area {
@@ -163,12 +85,166 @@ div {
   height: 21.888412017%;
 }
 
-@page {
-  size: B5 portrait;
+.table {
+  border-radius: 10px;
+  border: 2px solid #000000;
+  overflow: hidden;
+  border-collapse: separate;
+  width: 100%;
+  margin-top: 5px;
 }
 
-.page {
-  page-break-after: always;
-  width: 182mm;
-  height: 257mm;
+.row {
+  display: table;
+  width: 100%;
+}
+
+.cell {
+  display: table-cell;
+  border-left: 1px solid #000000;
+  border-top: 1px solid #000000;
+}
+
+.cell:first-child {
+  border-left: none;
+}
+
+.row:first-child .cell {
+  border-top: none;
+}
+
+.label {
+  background: #CCCCCC;
+  text-align: center;
+}
+
+.data {
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.table.ryujin_name,.table.created_date {
+  display:inline-block;
+  width: 47%;
+}
+
+.table.ryujin_name {
+  margin-right: 5px;
+}
+
+.table.created_date {
+  margin-left: 5px;
+}
+
+.label.ryujin_name,.label.created_date {
+  width: 46%;
+}
+
+.pc_name.label, .V_level.label, .class_name.label {
+  width: 15%;
+}
+
+.pc_name.data {
+  width: 46.7%;
+}
+
+.pl_name.label {
+  width: 18.1%;
+}
+
+.pl_name.data {
+}
+
+.V_level.label {
+}
+
+.V_level.data {
+  width: 14%;
+}
+
+.exp_his_sum.label, .sex.label, .type_id.label {
+  width: 9.8%;
+}
+
+.exp_his_sum.data {
+  width: 13%;
+}
+
+.sex.label {
+}
+
+.sex.data {
+  width: 9.1%;
+}
+
+.age.label {
+  width: 9.1%;
+}
+
+.age.data {
+}
+
+.class_name.label {
+}
+
+.class_name.datagroup {
+  width: 36.8%;
+}
+
+.type_id.label {
+}
+
+.type_id.datagroup {
+}
+
+.label.class-ability {
+  width: 29.4%;
+}
+
+.label.class-check-ability {
+  width: 22.8%;
+}
+
+.label.class-effect {
+
+}
+
+.data.class-ability-entry {
+  width: 29.4%;
+}
+
+.data.class-check-ability-entry {
+  width: 22.8%;
+}
+
+div.class-entry:nth-child(5) .cell {
+  border-top-style: double;
+  border-top-width: 3px;
+}
+
+.data.class-effect-entry {
+  font-size: 80%;
+}
+
+.label.feature-proficienty-weapon {
+  width: 15%;
+}
+
+.data.feature-proficienty-weapon {
+  width: 14%;
+}
+
+.label.feature-weather {
+  width: 9.8%;
+  font-size: 50%;
+  vertical-align: middle;
+}
+
+.data.feature-weather {
+  width: 13%;
+}
+
+.label.feature-favorite-item {
+  width: 18.9%;
+  font-size: 80%;
 }

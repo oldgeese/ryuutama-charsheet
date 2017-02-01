@@ -53,6 +53,61 @@ function RyutamaClass(props) {
         <Ryulabel className="class-check-ability">判定能力値</Ryulabel>
         <Ryulabel className="class-effect">効果</Ryulabel>
       </Ryurow>
+      <Ryurow className="class-entry">
+        <Ryudata className="class-ability-entry">{d.cls_name[0]}</Ryudata>
+        <Ryudata className="class-check-ability-entry">{d.cls_hantei[0]}</Ryudata>
+        <Ryudata className="class-effect-entry">{d.cls_kouka[0]}</Ryudata>
+      </Ryurow>
+      <Ryurow className="class-entry">
+        <Ryudata className="class-ability-entry">{d.cls_name[1]}</Ryudata>
+        <Ryudata className="class-check-ability-entry">{d.cls_hantei[1]}</Ryudata>
+        <Ryudata className="class-effect-entry">{d.cls_kouka[1]}</Ryudata>
+      </Ryurow>
+      <Ryurow className="class-entry">
+        <Ryudata className="class-ability-entry">{d.cls_name[2]}</Ryudata>
+        <Ryudata className="class-check-ability-entry">{d.cls_hantei[2]}</Ryudata>
+        <Ryudata className="class-effect-entry">{d.cls_kouka[2]}</Ryudata>
+      </Ryurow>
+      <Ryurow className="class-entry">
+        <Ryudata className="class-ability-entry">{d.cls_name[3]}</Ryudata>
+        <Ryudata className="class-check-ability-entry">{d.cls_hantei[3]}</Ryudata>
+        <Ryudata className="class-effect-entry">{d.cls_kouka[3]}</Ryudata>
+      </Ryurow>
+      <Ryurow className="class-entry">
+        <Ryudata className="class-ability-entry">{d.cls_name[4]}</Ryudata>
+        <Ryudata className="class-check-ability-entry">{d.cls_hantei[4]}</Ryudata>
+        <Ryudata className="class-effect-entry">{d.cls_kouka[4]}</Ryudata>
+      </Ryurow>
+      <Ryurow className="class-entry">
+        <Ryudata className="class-ability-entry">{d.cls_name[5]}</Ryudata>
+        <Ryudata className="class-check-ability-entry">{d.cls_hantei[5]}</Ryudata>
+        <Ryudata className="class-effect-entry">{d.cls_kouka[5]}</Ryudata>
+      </Ryurow>
+    </Ryutable>
+  );
+}
+
+function RyutamaFeature(props) {
+  const d = props.data;
+  return (
+    <Ryutable className="feature">
+      <Ryurow>
+        <Ryulabel className="feature-proficienty-weapon">習得武器</Ryulabel>
+        <Ryudata className="feature-proficienty-weapon"></Ryudata>
+        <Ryulabel className="feature-weather">得意<br/>地形/天候</Ryulabel>
+        <Ryudata className="feature-weather"></Ryudata>
+        <Ryulabel className="feature-favorite-item">お気に入りアイテム</Ryulabel>
+        <Ryudata className="feature-favorite-item"></Ryudata>
+      </Ryurow>
+      <Ryurow className="feature-color-appearance">
+        <Ryudata className="feature-color-appearance">イメージカラー／外見</Ryudata>
+      </Ryurow>
+      <Ryurow className="feature-homeland-reason">
+        <Ryudata className="feature-homeland-reason">故郷／旅に出た理由</Ryudata>
+      </Ryurow>
+      <Ryurow className="feature-memo">
+        <Ryudata className="feature-memo">ＭＥＭＯ</Ryudata>
+      </Ryurow>
     </Ryutable>
   );
 }
@@ -119,7 +174,8 @@ class RyutamaSheet extends React.Component {
               </div>
             </div>
           </div>
-          <RyutamaClass data={d}/>
+          <RyutamaClass data={d} />
+          <RyutamaFeature data={d} />
         </div>
       </div>
     );
