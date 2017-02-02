@@ -112,6 +112,64 @@ function RyutamaFeature(props) {
   );
 }
 
+function RyutamaCheck(props) {
+  const d = props.data;
+  return (
+    <Ryutable className="check">
+      <Ryurow>
+        <Ryulabel className="check-ability">能力値</Ryulabel>
+        <Ryudata className="check-ability-con">体力</Ryudata>
+        <Ryudata className="check-ability-dex">敏捷</Ryudata>
+        <Ryudata className="check-ability-int">知力</Ryudata>
+        <Ryudata className="check-ability-psy">精神</Ryudata>
+      </Ryurow>
+      <Ryurow>
+       <Ryulabel className="check-hp">HP</Ryulabel>
+       <Ryudata className="check-hp"></Ryudata>
+       <Ryulabel className="check-mp">MP</Ryulabel>
+       <Ryudata className="check-mp"></Ryudata>
+      </Ryurow>
+      <Ryurow>
+       <Ryulabel className="check-condition">コンディション</Ryulabel>
+       <Ryudata className="check-condition"></Ryudata>
+       <Ryudata className="check-fumble"></Ryudata>
+      </Ryurow>
+      <Ryurow>
+        <Ryudata className="check-travel">＜旅歩きルールの流れ＞</Ryudata>
+        <Ryulabel className="check-initiative">イニシアチブ</Ryulabel>
+        <Ryudata className="check-initiative"></Ryudata>
+      </Ryurow>
+    </Ryutable>
+  );
+}
+
+function RyutamaEquipment(props) {
+  const d = props.data;
+  return (
+    <div className="equipment">
+    装備
+    </div>
+  );
+}
+
+function RyutamaModifier(props) {
+  const d = props.data;
+  return (
+    <div className="modifier">
+    「地形＋天候」を目標値とするチェックの、装備による修正値
+    </div>
+  );
+}
+
+function RyutamaBadStatus(props) {
+  const d = props.data;
+  return (
+    <div className="badstatus">
+    状態異常
+    </div>
+  );
+}
+
 function RyutamaHeader(props) {
   return (
     <div className="ryutama-header">
@@ -143,6 +201,7 @@ class RyutamaSheet extends React.Component {
   render() {
     const d = this.props.data;
     return (
+      <div className="sheet">
       <div className="page">
         <div className="container">
           <RyutamaHeader/>
@@ -177,6 +236,15 @@ class RyutamaSheet extends React.Component {
           <RyutamaClass data={d} />
           <RyutamaFeature data={d} />
         </div>
+      </div>
+      <div className="page">
+        <div className="container">
+          <RyutamaCheck data={d} />
+          <RyutamaEquipment data={d} />
+          <RyutamaModifier data={d} />
+          <RyutamaBadStatus data={d} />
+        </div>
+      </div>
       </div>
     );
   }
