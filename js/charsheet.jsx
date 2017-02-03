@@ -227,7 +227,7 @@ function RyutamaBadStatus(props) {
           <Ryudata className="badstatus-injury-label">大ケガ</Ryudata>
           <Ryudata className="badstatus-injury-value"></Ryudata>
           <Ryudata className="badstatus-poison-label">毒</Ryudata>
-          <Ryudata className="badstatus-poison-value"</Ryudata>
+          <Ryudata className="badstatus-poison-value"></Ryudata>
           <Ryudata className="badstatus-disease-label">病気</Ryudata>
           <Ryudata className="badstasus-disease-value"></Ryudata>
         <Ryurow>
