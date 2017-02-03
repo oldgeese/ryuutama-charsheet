@@ -236,7 +236,7 @@ function RyutamaBadStatus(props) {
           <Ryudata className="badstatus-sluggish-label">だるい</Ryudata>
           <Ryudata className="badstatus-sluggish-value"></Ryudata>
           <Ryudata className="badstatus-high-label">ハイ</Ryudata>
-          <Ryudata className="badstatus-high-value"</Ryudata>
+          <Ryudata className="badstatus-high-value"></Ryudata>
           <Ryudata className="badstatus-shocked-label">ショック</Ryudata>
           <Ryudata className="badstasus-shocked-value"></Ryudata>
         <Ryurow>
