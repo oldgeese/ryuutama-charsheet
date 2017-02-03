@@ -147,7 +147,32 @@ function RyutamaEquipment(props) {
   const d = props.data;
   return (
     <div className="equipment">
-    装備
+      <div className="equipment-header">装備</div>
+      <Ryutable className="equipment">
+        <Ryurow>
+          <Ryulabel className="weapon">武器</Ryulabel>
+          <Ryudata className="weapon-name"></Ryudata>
+          <Ryudata className="weapon-hit"></Ryudata>
+          <Ryudata className="weapon-damage"></Ryudata>
+          <Ryudata className="weapon-constitution"></Ryudata>
+          <Ryudata className="weapon-effect"></Ryudata>
+        </Ryurow>
+        <Ryurow>
+          <Ryulabel className="armor">盾・鎧</Ryulabel>
+          <Ryudata className="armor-name"></Ryudata>
+          <Ryudata className="armor-defense"></Ryudata>
+          <Ryudata className="armor-penalty"></Ryudata>
+          <Ryudata className="armor-constitution"></Ryudata>
+          <Ryudata className="armor-effect"></Ryudata>
+        </Ryurow>
+        <Ryurow>
+          <Ryulabel className="clothing">旅装</Ryulabel>
+          <Ryudata className="clothing-name1"></Ryudata>
+          <Ryudata className="clothing-effect1"></Ryudata>
+          <Ryudata className="clothing-name2"></Ryudata>
+          <Ryudata className="clothing-effect2"></Ryudata>
+        </Ryurow>
+      </Ryutable>
     </div>
   );
 }
@@ -156,7 +181,36 @@ function RyutamaModifier(props) {
   const d = props.data;
   return (
     <div className="modifier">
-    「地形＋天候」を目標値とするチェックの、装備による修正値
+      <div className="modifier-header">「地形＋天候」を目標値とするチェックの、装備による修正値</div>
+      <Ryutable className="modifier">
+        <Ryurow>
+          <Ryulabel className="modifier-bonus-label">チェック<br/>ボーナス</Ryulabel>
+          <Ryudata className="modifier-bonus-lv1">LV1地形⇒6</Ryudata>
+          <Ryudata className="modifier-bonus-lv2">LV2地形⇒8</Ryudata>
+          <Ryudata className="modifier-bonus-lv3">LV3地形⇒10</Ryudata>
+          <Ryudata className="modifier-bonus-lv4">LV4地形⇒12</Ryudata>
+          <Ryudata className="modifier-bonus-lv5">LV5地形⇒14</Ryudata>
+        </Ryurow>
+        <Ryurow>
+          <Ryudata className="modifier-bonus-label-values"></Ryudata>
+          <Ryudata className="modifier-bonus-lv1-values"></Ryudata>
+          <Ryudata className="modifier-bonus-lv2-values"></Ryudata>
+          <Ryudata className="modifier-bonus-lv3-values"></Ryudata>
+          <Ryudata className="modifier-bonus-lv4-values"></Ryudata>
+          <Ryudata className="modifier-bonus-lv5-values"></Ryudata>
+        </Ryurow>
+        <Ryurow>
+          <Ryulabel className="modifier-penalty-label">チェック<br/>ボーナス</Ryulabel>
+          <Ryudata className="modifier-penalty-plus1">LV1地形⇒6</Ryudata>
+          <Ryudata className="modifier-penalty-plus3">LV2地形⇒8</Ryudata>
+          <Ryudata className="modifier-penalty-plus5">LV3地形⇒10</Ryudata>
+        </Ryurow>
+        <Ryurow>
+          <Ryudata className="modifier-penalty-label-values"></Ryudata>
+          <Ryudata className="modifier-penalty-plus1-values"></Ryudata>
+          <Ryudata className="modifier-penalty-plus3-values"></Ryudata>
+          <Ryudata className="modifier-penalty-plus5-values"></Ryudata>
+        </Ryurow>
     </div>
   );
 }
@@ -165,7 +219,27 @@ function RyutamaBadStatus(props) {
   const d = props.data;
   return (
     <div className="badstatus">
-    状態異常
+      <div className="badstatus-header">状態異常</div>
+      <Ryutable className="badstatus">
+        <Ryurow>
+          <Ryulabel className="badstatus-physical">肉体系</Ryulabel>
+          <Ryudata className="badstatus-injury-label">大ケガ</Ryudata>
+          <Ryudata className="badstatus-injury-value"></Ryudata>
+          <Ryudata className="badstatus-poison-label">毒</Ryudata>
+          <Ryudata className="badstatus-poison-value"</Ryudata>
+          <Ryudata className="badstatus-disease-label">病気</Ryudata>
+          <Ryudata className="badstasus-disease-value"></Ryudata>
+        <Ryurow>
+        <Ryurow>
+          <Ryulabel className="badstatus-mental">精神系</Ryulabel>
+          <Ryudata className="badstatus-sluggish-label">だるい</Ryudata>
+          <Ryudata className="badstatus-sluggish-value"></Ryudata>
+          <Ryudata className="badstatus-high-label">ハイ</Ryudata>
+          <Ryudata className="badstatus-high-value"</Ryudata>
+          <Ryudata className="badstatus-shocked-label">ショック</Ryudata>
+          <Ryudata className="badstasus-shocked-value"></Ryudata>
+        <Ryurow>
+      </Ryutable>
     </div>
   );
 }
