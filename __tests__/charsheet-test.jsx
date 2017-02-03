@@ -8,7 +8,7 @@ import getSheetData from '../js/sheetdata.jsx';
 
 describe('<CharSheet/>', () => {
   it('full DOM rendering', () => {
-    const wrapper = mount(<CharSheet />);
+    const wrapper = mount(<CharSheet charId="962930"/>);
     // let tree = wrapper.debug();
     // console.log(tree);
     expect(wrapper.find('CharSheet')).toHaveLength(1);
