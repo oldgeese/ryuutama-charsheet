@@ -230,7 +230,7 @@ function RyutamaBadStatus(props) {
           <Ryudata className="badstatus-poison-value"></Ryudata>
           <Ryudata className="badstatus-disease-label">病気</Ryudata>
           <Ryudata className="badstasus-disease-value"></Ryudata>
-        <Ryurow>
+        </Ryurow>
         <Ryurow>
           <Ryulabel className="badstatus-mental">精神系</Ryulabel>
           <Ryudata className="badstatus-sluggish-label">だるい</Ryudata>
@@ -239,7 +239,7 @@ function RyutamaBadStatus(props) {
           <Ryudata className="badstatus-high-value"></Ryudata>
           <Ryudata className="badstatus-shocked-label">ショック</Ryudata>
           <Ryudata className="badstasus-shocked-value"></Ryudata>
-        <Ryurow>
+        </Ryurow>
       </Ryutable>
     </div>
   );
