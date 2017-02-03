@@ -329,26 +329,53 @@ class CharSheet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {}
+      data: {},
+      error: null,
     };
   }
   componentDidMount() {
-    getSheetData().then((res) => {
+    const charId = (this.props.charId || "962930");
+    getSheetData(charId).then((res) => {
       if (res.body) {
         this.setState({data: res.body});
       }
     }).catch((err) => {
       console.error(err);
+      this.setState({error: err});
     });
   }
   render() {
     const d = this.state.data;
-    if (d && d.game == 'ryutama') {
-      document.title = "りゅうたまキャラシート/" + d.pc_name + "/レベル" + d.V_level;
-      return (<RyutamaSheet data={d}/>);
+    const home = "react.html";
+    if (this.state.error) {
+      return (
+        <div>
+          エラーが発生しました。
+          <a href={home}>戻る</a>
+        </div>
+      );
     } else {
-      return null;
+      if (Object.keys(d).length > 0) {
+        if (d.game && d.game == 'ryutama') {
+          document.title = "りゅうたまキャラシート/" + d.pc_name + "/レベル" + d.V_level;
+          return (<RyutamaSheet data={d}/>);
+        } else {
+          return (
+            <div>
+              りゅうたまのキャラクターデータではありません。
+              <a href={home}>戻る</a>
+            </div>
+          );
+        }
+      } else {
+        return (
+          <div>
+            Loading...
+          </div>
+        );
+      }
     }
+
   }
 }
 
