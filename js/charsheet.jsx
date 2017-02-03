@@ -211,6 +211,7 @@ function RyutamaModifier(props) {
           <Ryudata className="modifier-penalty-plus3-values"></Ryudata>
           <Ryudata className="modifier-penalty-plus5-values"></Ryudata>
         </Ryurow>
+      </Ryutable>
     </div>
   );
 }
