@@ -9,6 +9,7 @@ compile:
     - cp -a dist netlify/
     - cp -a css netlify/
     - cp react.html netlify/index.html
+    - cp _redirects netlify/
 general:
   branches:
     only:
