@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import CharSheet from './charsheet.jsx'
 
 class App extends React.Component {
@@ -54,8 +53,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
