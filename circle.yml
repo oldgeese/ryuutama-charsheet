@@ -9,6 +9,7 @@ compile:
     - cp -a dist netlify/
     - cp -a css netlify/
     - cp react.html netlify/index.html
+    - cp _redirects netlify/
 general:
   branches:
     only:
@@ -16,6 +17,6 @@ general:
       - develop
 deployment:
   staging:
-    branch: master
+    branch: [master, develop]
     commands:
       - ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
