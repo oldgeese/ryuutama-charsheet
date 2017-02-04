@@ -6,10 +6,8 @@ compile:
     - npm run build
   post:
     - mkdir netlify
-    - cp -a dist netlify/
-    - cp -a css netlify/
-    - cp react.html netlify/index.html
-    - cp _redirects netlify/
+    - cp -a dist css netlify/
+    - cp index.html _redirects netlify/
 general:
   branches:
     only:
