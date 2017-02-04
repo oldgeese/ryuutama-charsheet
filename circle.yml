@@ -17,6 +17,6 @@ general:
       - develop
 deployment:
   staging:
-    branch: master
+    branch: [master, develop]
     commands:
       - ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
