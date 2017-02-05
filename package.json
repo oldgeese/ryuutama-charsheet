@@ -5,7 +5,8 @@
   "main": "js/app.jsx",
   "scripts": {
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -29,7 +30,8 @@
     "react-test-renderer": "^15.4.2",
     "redux": "^3.6.0",
     "redux-devtools": "^3.3.1",
-    "webpack": "^2.2.0"
+    "webpack": "^2.2.0",
+    "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
     "react-redux": "^5.0.1",
