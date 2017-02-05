@@ -4,7 +4,7 @@
   "description": "Japanese TRPG, Ryuutama, Character sheet's layout concersion app.",
   "main": "js/app.jsx",
   "scripts": {
-    "test": "jest",
+    "test": "jest --no-watchman",
     "build": "webpack",
     "start": "webpack-dev-server"
   },
@@ -35,7 +35,11 @@
   },
   "dependencies": {
     "react-redux": "^5.0.1",
+    "react-router": "^3.0.2",
     "superagent": "^3.4.0",
     "superagent-jsonp": "^0.1.1"
+  },
+  "jest": {
+    "verbose": true
   }
 }
