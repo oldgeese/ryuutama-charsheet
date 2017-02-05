@@ -10,5 +10,12 @@ module.exports = {
     rules: [
       {test: /\.(jsx)$/, exclude: /node_modules/, use: 'babel-loader'}
     ]
+  },
+  devServer: {
+    historyApiFallback: {
+      rewrites: [
+        { from: /^.*$/, to: '/index.html' }
+      ]
+    }
   }
 };
