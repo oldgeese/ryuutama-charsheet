@@ -29,7 +29,7 @@ class App extends React.Component {
   render() {
     if (this.state.charIdInput) {
       return (
-        <CharSheet charId ={this.state.charId} />
+        <CharSheet charId={this.state.charId} />
       );
     } else {
       return (
