@@ -4,8 +4,8 @@ document.body.appendChild(div);
 
 require('../js/index.jsx');
 
-describe('app.jsx', () => {
-  it('<App /> should be rendered without error', () => {
+describe('index.jsx', () => {
+  it('render function should run without error', () => {
   });
 
 });

@@ -6,7 +6,7 @@ import { shallow, mount, render } from 'enzyme';
 import CharSheet from '../js/charsheet.jsx';
 import getSheetData from '../js/sheetdata.jsx';
 
-describe('<CharSheet/>', () => {
+describe('charsheet.jsx', () => {
   it('full DOM rendering', () => {
     const wrapper = mount(<CharSheet charId="962930"/>);
     // let tree = wrapper.debug();
