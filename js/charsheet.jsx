@@ -1,5 +1,6 @@
 import React from 'react';
 import getSheetData from './sheetdata.jsx';
+import {Link} from 'react-router'
 
 const type = {
   0: "",
@@ -329,12 +330,17 @@ class CharSheet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      charId: "",
       data: {},
       error: null,
     };
   }
-  componentDidMount() {
-    const charId = (this.props.params) ? this.props.params.charId : this.props.charId;
+  retrieveSheetData(charId) {
+    this.setState({
+      charId: charId,
+      data: {},
+      error: null,
+    });
     getSheetData(charId).then((res) => {
       if (res.body) {
         this.setState({data: res.body});
@@ -344,14 +350,38 @@ class CharSheet extends React.Component {
       this.setState({error: err});
     });
   }
+  componentDidMount() {
+    let charId = this.state.charId;
+    if (this.props.params) {
+      charId = this.props.params.charId;
+    } else {
+      charId = this.props.charId;
+    }
+    this.setState({charId: charId});
+    this.retrieveSheetData(charId);
+  }
+  componentWillReceiveProps(nextProps) {
+    let charId = this.state.charId;
+    if (nextProps.charId) {
+      charId = nextProps.charId;
+    } else if (nextProps.params) {
+      charId = nextProps.params.charId;
+    }
+
+    if (charId === this.state.charId) {
+      return;
+    }
+
+    this.setState({charId: charId});
+    this.retrieveSheetData(charId);
+  }
   render() {
     const d = this.state.data;
-    const home = "react.html";
     if (this.state.error) {
       return (
         <div>
           エラーが発生しました。
-          <a href={home}>戻る</a>
+          <Link to="/">戻る</Link>
         </div>
       );
     } else {
@@ -363,7 +393,7 @@ class CharSheet extends React.Component {
           return (
             <div>
               りゅうたまのキャラクターデータではありません。
-              <a href={home}>戻る</a>
+              <Link to="/">戻る</Link>
             </div>
           );
         }
@@ -375,7 +405,6 @@ class CharSheet extends React.Component {
         );
       }
     }
-
   }
 }
 

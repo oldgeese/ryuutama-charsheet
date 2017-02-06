@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --no-watchman",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --inline --history-api-fallback"
   },
   "author": "",
   "license": "ISC",

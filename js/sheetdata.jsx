@@ -11,5 +11,5 @@ export default function getSheetData(id) {
   if (isMD5) {
     id = 'm' + id;
   }
-  return request.get(baseUrl + id + postfix).use(jsonp({timeout: timeout}))
+  return request.get(baseUrl + id + postfix).use(jsonp({timeout: timeout}));
 }
