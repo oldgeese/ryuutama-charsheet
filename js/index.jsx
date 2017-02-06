@@ -10,7 +10,7 @@ ReactDOM.render((
     <Route path="/" component={App}>
       <IndexRedirect to="/input" />
       <Route path="input" component={InputCharId} />
-      <Route path="char/:charid" component={CharSheet} />
+      <Route path="char/:charId" component={CharSheet} />
     </Route>
   </Router>
   ),
