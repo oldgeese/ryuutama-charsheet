@@ -334,7 +334,7 @@ class CharSheet extends React.Component {
     };
   }
   componentDidMount() {
-    const charId = (this.props.charId || "962930");
+    const charId = (this.props.params) ? this.props.params.charId : this.props.charId;
     getSheetData(charId).then((res) => {
       if (res.body) {
         this.setState({data: res.body});
