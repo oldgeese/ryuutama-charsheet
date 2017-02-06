@@ -1,9 +1,6 @@
 import React from 'react';
 
 class InputCharId extends React.Component {
-  contextTypes: {
-    router: React.PropTypes.object
-  }
   constructor(props) {
     super(props);
     this.state = {
@@ -44,6 +41,10 @@ class InputCharId extends React.Component {
       </div>
     );
   }
+}
+
+InputCharId.contextTypes = {
+    router: React.PropTypes.object
 }
 
 export default InputCharId;
