@@ -250,7 +250,7 @@ function RyutamaHeader(props) {
   return (
     <div className="ryutama-header">
       <RyutamaSheetTitle>
-        <div className="ryutama-title">りゅう◇たま</div>
+        <div className="ryutama-title">りゅう◇た&nbsp;ま</div>
         <div className="ryutama-title-english">natural fantasy R.P.G.</div>
         <div className="traveler-character-sheet">旅人キャラクターシート</div>
         <div>
@@ -281,7 +281,7 @@ class RyutamaSheet extends React.Component {
       <div className="page">
         <div className="container">
           <RyutamaHeader/>
-          <div className="table">
+          <div className="table character">
             <div className="row">
               <div className="cell label pc_name">キャラクター名</div>
               <div className="cell data pc_name">{d.pc_name}</div>
