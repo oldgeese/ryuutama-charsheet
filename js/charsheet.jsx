@@ -1,6 +1,7 @@
 import React from 'react';
 import getSheetData from './sheetdata.jsx';
-import {Link} from 'react-router'
+import {Link} from 'react-router';
+import css from '../css/style.css';
 
 const type = {
   0: "",
@@ -126,7 +127,10 @@ function RyutamaCheck(props) {
       </Ryurow>
       <Ryurow>
        <Ryulabel className="check-hp">HP</Ryulabel>
-       <Ryudata className="check-hp"></Ryudata>
+       <Ryudata className="check-hp">
+         <Ryurow>最大HP=体力×２</Ryurow>
+         <Ryurow>💟</Ryurow>
+       </Ryudata>
        <Ryulabel className="check-mp">MP</Ryulabel>
        <Ryudata className="check-mp"></Ryudata>
       </Ryurow>

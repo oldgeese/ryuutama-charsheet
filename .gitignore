@@ -54,3 +54,6 @@ Session.vim
 *~
 
 dist
+public/bundle.js
+public/style.css
+*/bundle.js

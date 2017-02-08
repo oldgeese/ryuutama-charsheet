@@ -5,9 +5,8 @@ compile:
   override:
     - npm run build
   post:
-    - mkdir netlify
-    - cp -a dist css netlify/
-    - cp index.html _redirects netlify/
+    - mkdir -p netlify
+    - cp public/* netlify/
 general:
   branches:
     only:
