@@ -119,29 +119,48 @@ function RyutamaCheck(props) {
   return (
     <Ryutable className="check">
       <Ryurow>
-        <Ryulabel className="check-ability">能力値</Ryulabel>
+        <Ryulabel className="check-ability vertical">能力値</Ryulabel>
         <Ryudata className="check-ability-con">体力</Ryudata>
         <Ryudata className="check-ability-dex">敏捷</Ryudata>
         <Ryudata className="check-ability-int">知力</Ryudata>
         <Ryudata className="check-ability-psy">精神</Ryudata>
       </Ryurow>
       <Ryurow>
-       <Ryulabel className="check-hp">HP</Ryulabel>
-       <Ryudata className="check-hp">
-         <Ryurow>最大HP=体力×２</Ryurow>
-         <Ryurow>💟</Ryurow>
-       </Ryudata>
-       <Ryulabel className="check-mp">MP</Ryulabel>
-       <Ryudata className="check-mp"></Ryudata>
+        <Ryulabel className="check-hp">HP</Ryulabel>
+        <Ryudata className="check-hp nopadding">
+          <Ryurow><Ryudata className="center reverse-color">【最大HP=体力×２】</Ryudata></Ryurow>
+          <Ryurow><Ryudata>💟</Ryudata></Ryurow>
+        </Ryudata>
+        <Ryulabel className="check-mp">MP</Ryulabel>
+        <Ryudata className="check-mp nopadding">
+          <Ryurow><Ryudata className="center reverse-color">【最大MP=精神×２】</Ryudata></Ryurow>
+          <Ryurow><Ryudata>✴️</Ryudata></Ryurow>
+        </Ryudata>
       </Ryurow>
       <Ryurow>
-       <Ryulabel className="check-condition">コンディション</Ryulabel>
-       <Ryudata className="check-condition"></Ryudata>
-       <Ryudata className="check-fumble"></Ryudata>
+        <Ryulabel className="check-condition small vertical">コンディション</Ryulabel>
+        <Ryudata className="check-condition nopadding">
+          <Ryurow><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
+          <Ryurow><Ryudata>👤 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
+        </Ryudata>
+        <Ryudata className="check-fumble nopadding">
+          <Ryurow><Ryulabel className="center">1ゾロポイント</Ryulabel></Ryurow>
+          <Ryurow><Ryudata>💀</Ryudata></Ryurow>
+        </Ryudata>
       </Ryurow>
       <Ryurow>
-        <Ryudata className="check-travel">＜旅歩きルールの流れ＞</Ryudata>
-        <Ryulabel className="check-initiative">イニシアチブ</Ryulabel>
+        <Ryudata className="check-travel center">
+          ＜旅歩きルールの流れ＞<br/>
+          <span className="small">
+          (1)移動チェック【体＋敏】
+          (2)方向チェック【知＋知】
+          (3)野営チェック【敏＋知】
+          </span>
+        </Ryudata>
+        <Ryulabel className="check-initiative">
+          イニシアチブ<br/>
+          【敏＋知】
+        </Ryulabel>
         <Ryudata className="check-initiative"></Ryudata>
       </Ryurow>
     </Ryutable>
