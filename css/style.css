@@ -109,7 +109,7 @@ div {
   border-left: none;
 }
 
-.row:first-child .cell {
+.row:first-child > .cell {
   border-top: none;
 }
 
@@ -274,4 +274,15 @@ div.class-entry:nth-child(5) .cell {
 
 .vertical {
   /* writing-mode: vertical-lr; */
+}
+
+.left-top-tip {
+  font-size: 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.relative {
+  position: relative;
 }
