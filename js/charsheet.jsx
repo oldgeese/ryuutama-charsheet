@@ -175,26 +175,124 @@ function RyutamaEquipment(props) {
       <Ryutable className="equipment">
         <Ryurow>
           <Ryulabel className="weapon">武器</Ryulabel>
-          <Ryudata className="weapon-name"></Ryudata>
-          <Ryudata className="weapon-hit"></Ryudata>
-          <Ryudata className="weapon-damage"></Ryudata>
-          <Ryudata className="weapon-constitution"></Ryudata>
-          <Ryudata className="weapon-effect"></Ryudata>
+          <Ryudata className="weapon-name">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-hit">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-damage">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-constitution">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-effect">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
           <Ryulabel className="armor">盾・鎧</Ryulabel>
-          <Ryudata className="armor-name"></Ryudata>
-          <Ryudata className="armor-defense"></Ryudata>
-          <Ryudata className="armor-penalty"></Ryudata>
-          <Ryudata className="armor-constitution"></Ryudata>
-          <Ryudata className="armor-effect"></Ryudata>
+          <Ryudata className="armor-name">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-defense">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-penalty">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-constitution">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-effect">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
           <Ryulabel className="clothing">旅装</Ryulabel>
-          <Ryudata className="clothing-name1"></Ryudata>
-          <Ryudata className="clothing-effect1"></Ryudata>
-          <Ryudata className="clothing-name2"></Ryudata>
-          <Ryudata className="clothing-effect2"></Ryudata>
+          <Ryudata className="clothing-name1">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="clothing-effect1">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="clothing-name2">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="clothing-effect2">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
       </Ryutable>
     </div>
@@ -209,31 +307,118 @@ function RyutamaModifier(props) {
       <Ryutable className="modifier">
         <Ryurow>
           <Ryulabel className="modifier-bonus-label">チェック<br/>ボーナス</Ryulabel>
-          <Ryudata className="modifier-bonus-lv1">LV1地形⇒6</Ryudata>
-          <Ryudata className="modifier-bonus-lv2">LV2地形⇒8</Ryudata>
-          <Ryudata className="modifier-bonus-lv3">LV3地形⇒10</Ryudata>
-          <Ryudata className="modifier-bonus-lv4">LV4地形⇒12</Ryudata>
-          <Ryudata className="modifier-bonus-lv5">LV5地形⇒14</Ryudata>
+          <Ryudata className="modifier-bonus-lv1">
+            <Ryurow><Ryudata>LV1地形⇒6</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>草原</Ryudata>
+              <Ryudata>荒野</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv2">
+            <Ryurow><Ryudata>LV2地形⇒8</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>林</Ryudata>
+              <Ryudata>丘陵</Ryudata>
+              <Ryudata>岩場</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv3">
+            <Ryurow><Ryudata>LV3地形⇒10</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>森</Ryudata>
+              <Ryudata>湿地</Ryudata>
+              <Ryudata>山</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv4">
+            <Ryurow><Ryudata>LV4地形⇒12</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>砂漠</Ryudata>
+              <Ryudata>密林</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv5">
+            <Ryurow><Ryudata>LV5地形⇒14</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>高山</Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
           <Ryudata className="modifier-bonus-label-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv1-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv2-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv3-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv4-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv5-values"></Ryudata>
+          <Ryudata className="modifier-bonus-lv1-values">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv2-values">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv3-values">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv4-values">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv5-values">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
-          <Ryulabel className="modifier-penalty-label">チェック<br/>ボーナス</Ryulabel>
-          <Ryudata className="modifier-penalty-plus1">LV1地形⇒6</Ryudata>
-          <Ryudata className="modifier-penalty-plus3">LV2地形⇒8</Ryudata>
-          <Ryudata className="modifier-penalty-plus5">LV3地形⇒10</Ryudata>
+          <Ryulabel className="modifier-penalty-label">チェック<br/>ペナルティ</Ryulabel>
+          <Ryudata className="modifier-penalty-plus1"></Ryudata>
+          <Ryudata className="modifier-penalty-plus3"></Ryudata>
+          <Ryudata className="modifier-penalty-plus5"></Ryudata>
         </Ryurow>
         <Ryurow>
-          <Ryudata className="modifier-penalty-label-values"></Ryudata>
-          <Ryudata className="modifier-penalty-plus1-values"></Ryudata>
-          <Ryudata className="modifier-penalty-plus3-values"></Ryudata>
-          <Ryudata className="modifier-penalty-plus5-values"></Ryudata>
+          <Ryudata className="modifier-penalty-label-values">
+            <Ryurow>
+              <Ryudata>天候の修正値＋1</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus1-values">
+            <Ryurow>
+              <Ryudata>天候の修正値＋1</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus3-values">
+            <Ryurow>
+              <Ryudata>天候の修正値＋1</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus5-values">
+          </Ryudata>
         </Ryurow>
       </Ryutable>
     </div>
