@@ -109,7 +109,7 @@ div {
   border-left: none;
 }
 
-.row:first-child .cell {
+.row:first-child > .cell {
   border-top: none;
 }
 
@@ -253,4 +253,36 @@ div.class-entry:nth-child(5) .cell {
 .label.feature-favorite-item {
   width: 18.9%;
   font-size: 80%;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.reverse-color {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.small {
+  font-size: 50%;
+}
+
+.vertical {
+  /* writing-mode: vertical-lr; */
+}
+
+.left-top-tip {
+  font-size: 30%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.relative {
+  position: relative;
 }

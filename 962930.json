@@ -1,4 +1,4 @@
-test({
+{
     "is_disp_status": "1",
     "V_class_id": "7",
     "class_id": "7",
@@ -239,4 +239,4 @@ test({
     "ref_ganken": 1,
     "ref_naishoku": 1,
     "ref_tasinami": 0
-})
+}

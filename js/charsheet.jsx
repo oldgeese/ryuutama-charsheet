@@ -10,6 +10,10 @@ const type = {
   3: "マジック"
 };
 
+function joinIgnoreFalsy(list, separator=",") {
+  return list.filter((v)=>(v)).join(separator);
+}
+
 function Ryutable(props) {
   return (
     <div className={"table " + (props.className || "")}>{props.children}</div>
@@ -119,29 +123,48 @@ function RyutamaCheck(props) {
   return (
     <Ryutable className="check">
       <Ryurow>
-        <Ryulabel className="check-ability">能力値</Ryulabel>
+        <Ryulabel className="check-ability vertical">能力値</Ryulabel>
         <Ryudata className="check-ability-con">体力</Ryudata>
         <Ryudata className="check-ability-dex">敏捷</Ryudata>
         <Ryudata className="check-ability-int">知力</Ryudata>
         <Ryudata className="check-ability-psy">精神</Ryudata>
       </Ryurow>
       <Ryurow>
-       <Ryulabel className="check-hp">HP</Ryulabel>
-       <Ryudata className="check-hp">
-         <Ryurow>最大HP=体力×２</Ryurow>
-         <Ryurow>💟</Ryurow>
-       </Ryudata>
-       <Ryulabel className="check-mp">MP</Ryulabel>
-       <Ryudata className="check-mp"></Ryudata>
+        <Ryulabel className="check-hp">HP</Ryulabel>
+        <Ryudata className="check-hp nopadding">
+          <Ryurow><Ryudata className="center reverse-color">【最大HP=体力×２】</Ryudata></Ryurow>
+          <Ryurow><Ryudata>💟</Ryudata></Ryurow>
+        </Ryudata>
+        <Ryulabel className="check-mp">MP</Ryulabel>
+        <Ryudata className="check-mp nopadding">
+          <Ryurow><Ryudata className="center reverse-color">【最大MP=精神×２】</Ryudata></Ryurow>
+          <Ryurow><Ryudata>✴️</Ryudata></Ryurow>
+        </Ryudata>
       </Ryurow>
       <Ryurow>
-       <Ryulabel className="check-condition">コンディション</Ryulabel>
-       <Ryudata className="check-condition"></Ryudata>
-       <Ryudata className="check-fumble"></Ryudata>
+        <Ryulabel className="check-condition small vertical">コンディション</Ryulabel>
+        <Ryudata className="check-condition nopadding">
+          <Ryurow><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
+          <Ryurow><Ryudata>👤 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
+        </Ryudata>
+        <Ryudata className="check-fumble nopadding">
+          <Ryurow><Ryulabel className="center">1ゾロポイント</Ryulabel></Ryurow>
+          <Ryurow><Ryudata>💀</Ryudata></Ryurow>
+        </Ryudata>
       </Ryurow>
       <Ryurow>
-        <Ryudata className="check-travel">＜旅歩きルールの流れ＞</Ryudata>
-        <Ryulabel className="check-initiative">イニシアチブ</Ryulabel>
+        <Ryudata className="check-travel center">
+          ＜旅歩きルールの流れ＞<br/>
+          <span className="small">
+          (1)移動チェック【体＋敏】
+          (2)方向チェック【知＋知】
+          (3)野営チェック【敏＋知】
+          </span>
+        </Ryudata>
+        <Ryulabel className="check-initiative">
+          イニシアチブ<br/>
+          【敏＋知】
+        </Ryulabel>
         <Ryudata className="check-initiative"></Ryudata>
       </Ryurow>
     </Ryutable>
@@ -156,26 +179,211 @@ function RyutamaEquipment(props) {
       <Ryutable className="equipment">
         <Ryurow>
           <Ryulabel className="weapon">武器</Ryulabel>
-          <Ryudata className="weapon-name"></Ryudata>
-          <Ryudata className="weapon-hit"></Ryudata>
-          <Ryudata className="weapon-damage"></Ryudata>
-          <Ryudata className="weapon-constitution"></Ryudata>
-          <Ryudata className="weapon-effect"></Ryudata>
+          <Ryudata className="weapon-name nopadding">
+            <Ryurow>
+              <Ryudata>
+                {(d.AR_Tokucho + d.AR_name)}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-hit nopadding">
+            <Ryurow>
+              <Ryudata className="relative">
+                <div className="left-top-tip">命中</div>
+                {d.AR_hit}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-damage nopadding">
+            <Ryurow>
+              <Ryudata className="relative">
+                <div className="left-top-tip">ダメージ</div>
+                {d.AR_dmg}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-constitution nopadding">
+            <Ryurow>
+              <Ryudata className="relative">
+                <div className="left-top-tip">耐久度</div>
+                {d.AR_taikyu}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="weapon-effect nopadding">
+            <Ryurow>
+              <Ryudata className="relative">
+                <div className="left-top-tip">効果など</div>
+                {
+                  joinIgnoreFalsy([
+                    d.AR_eva ? "回避:" + d.AR_eva : "",
+                    d.AR_penalty ? "ペナルティ:" + d.AR_penalty : "",
+                    d.AR_kouka,
+                  ],"/")
+                }
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
           <Ryulabel className="armor">盾・鎧</Ryulabel>
-          <Ryudata className="armor-name"></Ryudata>
-          <Ryudata className="armor-defense"></Ryudata>
-          <Ryudata className="armor-penalty"></Ryudata>
-          <Ryudata className="armor-constitution"></Ryudata>
-          <Ryudata className="armor-effect"></Ryudata>
+          <Ryudata className="armor-name nopadding">
+            <Ryurow>
+              <Ryudata>
+                {(d.AL_Tokucho + d.AL_name)}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {(d.AB_Tokucho + d.AB_name)}
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-defense nopadding">
+            <Ryurow>
+              <Ryudata>
+                {d.AL_hit}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {d.AB_def}
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-penalty nopadding">
+            <Ryurow>
+              <Ryudata>
+                {d.AL_penalty}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {d.AB_penalty}
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-constitution nopadding">
+            <Ryurow>
+              <Ryudata>
+                {d.AL_taikyu}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {d.AB_taikyu}
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="armor-effect nopadding">
+            <Ryurow>
+              <Ryudata>
+                {
+                  joinIgnoreFalsy([
+                    d.AL_eva ? "回避:" + d.AL_eva : "",
+                    d.AL_penalty ? "ペナルティ:" + d.AL_penalty : "",
+                    d.AL_kouka,
+                  ],"/")
+                }
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {d.AB_kouka}
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
           <Ryulabel className="clothing">旅装</Ryulabel>
-          <Ryudata className="clothing-name1"></Ryudata>
-          <Ryudata className="clothing-effect1"></Ryudata>
-          <Ryudata className="clothing-name2"></Ryudata>
-          <Ryudata className="clothing-effect2"></Ryudata>
+          <Ryudata className="clothing-name1 nopadding">
+            <Ryurow>
+              <Ryudata>
+                {(d.AH_Tokucho + d.AH_name)}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {(d.AM_Tokucho + d.AM_name)}
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="clothing-effect1 nopadding">
+            <Ryurow>
+              <Ryudata>
+                {
+                  joinIgnoreFalsy([
+                    d.AH_taikyu ? "耐久度:" + d.AH_taikyu : "",
+                    d.AH_kouka  ? "効果:" + d.AH_kouka : "",
+                  ],"/")
+                }
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {
+                  joinIgnoreFalsy([
+                    d.AM_taikyu ? "耐久度:" + d.AM_taikyu : "",
+                    d.AM_kouka  ? "効果:" + d.AM_kouka : "",
+                  ],"/")
+                }
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="clothing-name2 nopadding">
+            <Ryurow>
+              <Ryudata>
+                {(d.AT_Tokucho + d.AT_name)}
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {(d.AS_Tokucho + d.AS_name)}
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="clothing-effect2 nopadding">
+            <Ryurow>
+              <Ryudata>
+                {
+                  joinIgnoreFalsy([
+                    d.AT_taikyu ? "耐久度:" + d.AT_taikyu : "",
+                    d.AT_kouka  ? "効果:" + d.AT_kouka : "",
+                  ],"/")
+                }
+              </Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>
+                {
+                  joinIgnoreFalsy([
+                    d.AS_taikyu ? "耐久度:" + d.AS_taikyu : "",
+                    d.AS_kouka  ? "効果:" + d.AS_kouka : "",
+                  ],"/")
+                }
+              </Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
       </Ryutable>
     </div>
@@ -190,31 +398,138 @@ function RyutamaModifier(props) {
       <Ryutable className="modifier">
         <Ryurow>
           <Ryulabel className="modifier-bonus-label">チェック<br/>ボーナス</Ryulabel>
-          <Ryudata className="modifier-bonus-lv1">LV1地形⇒6</Ryudata>
-          <Ryudata className="modifier-bonus-lv2">LV2地形⇒8</Ryudata>
-          <Ryudata className="modifier-bonus-lv3">LV3地形⇒10</Ryudata>
-          <Ryudata className="modifier-bonus-lv4">LV4地形⇒12</Ryudata>
-          <Ryudata className="modifier-bonus-lv5">LV5地形⇒14</Ryudata>
+          <Ryudata className="modifier-bonus-lv1 nopadding">
+            <Ryurow><Ryudata>LV1地形⇒6</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>草原</Ryudata>
+              <Ryudata>荒野</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv2 nopadding">
+            <Ryurow><Ryudata>LV2地形⇒8</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>林</Ryudata>
+              <Ryudata>丘陵</Ryudata>
+              <Ryudata>岩場</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv3 nopadding">
+            <Ryurow><Ryudata>LV3地形⇒10</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>森</Ryudata>
+              <Ryudata>湿地</Ryudata>
+              <Ryudata>山</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv4 nopadding">
+            <Ryurow><Ryudata>LV4地形⇒12</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>砂漠</Ryudata>
+              <Ryudata>密林</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv5 nopadding">
+            <Ryurow><Ryudata>LV5地形⇒14</Ryudata></Ryurow>
+            <Ryurow>
+              <Ryudata>高山</Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
           <Ryudata className="modifier-bonus-label-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv1-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv2-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv3-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv4-values"></Ryudata>
-          <Ryudata className="modifier-bonus-lv5-values"></Ryudata>
+          <Ryudata className="modifier-bonus-lv1-values nopadding">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv2-values nopadding">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv3-values nopadding">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv4-values nopadding">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-bonus-lv5-values nopadding">
+            <Ryurow>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
-          <Ryulabel className="modifier-penalty-label">チェック<br/>ボーナス</Ryulabel>
-          <Ryudata className="modifier-penalty-plus1">LV1地形⇒6</Ryudata>
-          <Ryudata className="modifier-penalty-plus3">LV2地形⇒8</Ryudata>
-          <Ryudata className="modifier-penalty-plus5">LV3地形⇒10</Ryudata>
+          <Ryulabel className="modifier-penalty-label">チェック<br/>ペナルティ</Ryulabel>
+          <Ryudata className="modifier-penalty-plus1 nopadding">
+            <Ryurow>
+              <Ryudata>天候の修正値＋1</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>雨</Ryudata>
+              <Ryudata>強風</Ryudata>
+              <Ryudata>霧</Ryudata>
+              <Ryudata>暑い</Ryudata>
+              <Ryudata>寒い</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus3 nopadding">
+            <Ryurow>
+              <Ryudata>天候の修正値＋2</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>豪雨</Ryudata>
+              <Ryudata>雪</Ryudata>
+              <Ryudata>濃霧</Ryudata>
+              <Ryudata>闇</Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus5 nopadding">
+            <Ryurow>
+              <Ryudata>天候の修正値＋3</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryudata>大嵐</Ryudata>
+              <Ryudata>猛吹雪</Ryudata>
+            </Ryurow>
+          </Ryudata>
         </Ryurow>
         <Ryurow>
-          <Ryudata className="modifier-penalty-label-values"></Ryudata>
-          <Ryudata className="modifier-penalty-plus1-values"></Ryudata>
-          <Ryudata className="modifier-penalty-plus3-values"></Ryudata>
-          <Ryudata className="modifier-penalty-plus5-values"></Ryudata>
+          <Ryudata className="modifier-penalty-label-values">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus1-values nopadding">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus3-values nopadding">
+            <Ryurow>
+              <Ryudata></Ryudata>
+              <Ryudata></Ryudata>
+            </Ryurow>
+          </Ryudata>
+          <Ryudata className="modifier-penalty-plus5-values nopadding">
+          </Ryudata>
         </Ryurow>
       </Ryutable>
     </div>
