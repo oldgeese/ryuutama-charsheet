@@ -26,6 +26,7 @@ div.container {
   margin-left:auto;
   margin-right:auto;
   padding-top: 5.7%;
+  border: 1px solid #FAFAFA;
 }
 
 div {
@@ -91,7 +92,6 @@ div {
   overflow: hidden;
   border-collapse: separate;
   width: 100%;
-  margin-top: 5px;
 }
 
 .row {
@@ -117,17 +117,24 @@ div {
   background: #CCCCCC;
   text-align: center;
   font-size: 80%;
+  vertical-align: middle;
 }
 
 .data {
   padding-left: 1%;
   padding-right: 1%;
+  vertical-align: middle;
+}
+
+.datagroup {
+  vertical-align: middle;
 }
 
 .table.ryujin_name,.table.created_date {
   display:inline-block;
   width: 47%;
   height: 11.5%;
+  margin-top: 4%;
 }
 
 .table.ryujin_name {
@@ -146,19 +153,29 @@ div {
   height: 9.8%;
 }
 
+.table.character {
+  height: 11.6%;
+  margin-top: 1.3%
+}
+
+.table.character>.row {
+  height: 35%;
+}
+
 .pc_name.label, .V_level.label, .class_name.label {
   width: 15%;
 }
 
 .pc_name.data {
-  width: 46.7%;
+  width: 47%;
 }
 
 .pl_name.label {
-  width: 18%;
+  width: 19%;
 }
 
 .pl_name.data {
+  width: 19%
 }
 
 .V_level.label {
@@ -169,7 +186,7 @@ div {
 }
 
 .exp_his_sum.label, .sex.label, .type_id.label {
-  width: 9.8%;
+  width: 10%;
 }
 
 .exp_his_sum.data {
@@ -180,7 +197,7 @@ div {
 }
 
 .sex.data {
-  width: 9.1%;
+  width: 10%;
 }
 
 .age.label {
@@ -188,39 +205,50 @@ div {
 }
 
 .age.data {
+  width: 19%;
 }
 
 .class_name.label {
 }
 
 .class_name.datagroup {
-  width: 36.8%;
+  width: 37%;
 }
 
 .type_id.label {
 }
 
 .type_id.datagroup {
+  width: 38%;
+}
+
+.table.class {
+  height: 27%;
+  margin-top: 1.3%
+}
+
+.table.class>.row {
+  height: 14.4%;
 }
 
 .label.class-ability {
-  width: 29.4%;
+  width: 29%;
 }
 
 .label.class-check-ability {
-  width: 22.8%;
+  width: 23%;
 }
 
 .label.class-effect {
-
+  width: 48%;
 }
 
 .data.class-ability-entry {
-  width: 29.4%;
+  width: 29%;
 }
 
 .data.class-check-ability-entry {
-  width: 22.8%;
+  width: 23%;
 }
 
 div.class-entry:nth-child(5) .cell {
@@ -230,6 +258,28 @@ div.class-entry:nth-child(5) .cell {
 
 .data.class-effect-entry {
   font-size: 80%;
+  width: 48%;
+}
+
+.table.feature {
+  height: 36%;
+  margin-top: 1.3%
+}
+
+.table.feature>.row {
+  height: 10%;
+}
+
+.table.feature>.row.feature-color-appearance {
+  height: 30%;
+}
+
+.table.feature>.row.feature-homeland-reason {
+  height: 30%;
+}
+
+.table.feature>.row.feature-memo {
+  height: 30%;
 }
 
 .label.feature-proficienty-weapon {
@@ -241,7 +291,7 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .label.feature-weather {
-  width: 9.8%;
+  width: 10%;
   font-size: 50%;
   vertical-align: middle;
 }
@@ -251,8 +301,24 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .label.feature-favorite-item {
-  width: 18.9%;
+  width: 19%;
   font-size: 80%;
+}
+
+.data.feature-favorite-item {
+  width: 30%;
+}
+
+.data.feature-color-appearance {
+  vertical-align: baseline;
+}
+
+.data.feature-homeland-reason {
+  vertical-align: baseline;
+}
+
+.data.feature-memo {
+  vertical-align: baseline;
 }
 
 .nopadding {
