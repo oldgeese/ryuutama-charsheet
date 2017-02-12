@@ -80,6 +80,7 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: 0.3em;
   /* display: inline-block; */
   /* vertical-align: middle; */
 }
