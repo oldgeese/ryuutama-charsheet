@@ -292,7 +292,7 @@ div.class-entry:nth-child(5) .cell {
 
 .label.feature-weather {
   width: 10%;
-  font-size: 50%;
+  font-size: 60%;
   vertical-align: middle;
 }
 
@@ -339,7 +339,14 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .vertical {
-  /* writing-mode: vertical-lr; */
+  /* -webkit-writing-mode: vertical-rl; */
+  /* -ms-writing-mode: tb-rl; */
+  /* writing-mode: vertical-rl; */
+  /* -webkit-text-orientation: sideways; */
+  /* text-orientation: sideways; */
+  /* display: inline-block; */
+  /* transform: rotate(-90deg); */
+  /* width: 10px; */
 }
 
 .left-top-tip {
@@ -351,4 +358,28 @@ div.class-entry:nth-child(5) .cell {
 
 .relative {
   position: relative;
+}
+
+.table.check {
+  height: 29.5%;
+}
+
+.table.check>.row.check-ability {
+  height: 36%;
+}
+
+.table.check>.row.check-hp-mp {
+  height: 24.5%;
+}
+
+.table.check>.row.check-condition {
+  height: 24.5%;
+}
+
+.table.check>.row.check-travel-initiative {
+  height: 15%;
+}
+
+.label.check-ability, .label.check-hp, .label.check-condition {
+  width: 6%;
 }

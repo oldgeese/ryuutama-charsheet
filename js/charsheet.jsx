@@ -57,7 +57,7 @@ function RyutamaClass(props) {
       <Ryurow className="class-header">
         <Ryulabel className="class-ability">クラス能力</Ryulabel>
         <Ryulabel className="class-check-ability">判定能力値</Ryulabel>
-        <Ryulabel className="class-effect">効果</Ryulabel>
+        <Ryulabel className="class-effect">効 果</Ryulabel>
       </Ryurow>
       <Ryurow className="class-entry">
         <Ryudata className="class-ability-entry">{d.cls_name[0]}</Ryudata>
@@ -100,7 +100,7 @@ function RyutamaFeature(props) {
       <Ryurow>
         <Ryulabel className="feature-proficienty-weapon">習得武器</Ryulabel>
         <Ryudata className="feature-proficienty-weapon"></Ryudata>
-        <Ryulabel className="feature-weather">得意<br/>地形/天候</Ryulabel>
+        <Ryulabel className="feature-weather">得意<br/>地形／天候</Ryulabel>
         <Ryudata className="feature-weather"></Ryudata>
         <Ryulabel className="feature-favorite-item">お気に入りアイテム</Ryulabel>
         <Ryudata className="feature-favorite-item"></Ryudata>
@@ -122,27 +122,27 @@ function RyutamaCheck(props) {
   const d = props.data;
   return (
     <Ryutable className="check">
-      <Ryurow>
-        <Ryulabel className="check-ability vertical">能力値</Ryulabel>
-        <Ryudata className="check-ability-con">体力</Ryudata>
+      <Ryurow className="check-ability">
+        <Ryulabel className="check-ability h2vr_10">能力値</Ryulabel>
+        <Ryudata className="check-ability-str">体力</Ryudata>
         <Ryudata className="check-ability-dex">敏捷</Ryudata>
         <Ryudata className="check-ability-int">知力</Ryudata>
-        <Ryudata className="check-ability-psy">精神</Ryudata>
+        <Ryudata className="check-ability-spi">精神</Ryudata>
       </Ryurow>
-      <Ryurow>
+      <Ryurow className="check-hp-mp">
         <Ryulabel className="check-hp">HP</Ryulabel>
         <Ryudata className="check-hp nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【最大HP=体力×２】</Ryudata></Ryurow>
+          <Ryurow><Ryudata className="center reverse-color">【最大HP＝体力×２】</Ryudata></Ryurow>
           <Ryurow><Ryudata>💟</Ryudata></Ryurow>
         </Ryudata>
         <Ryulabel className="check-mp">MP</Ryulabel>
         <Ryudata className="check-mp nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【最大MP=精神×２】</Ryudata></Ryurow>
+          <Ryurow><Ryudata className="center reverse-color">【最大MP＝精神×２】</Ryudata></Ryurow>
           <Ryurow><Ryudata>✴️</Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
-      <Ryurow>
-        <Ryulabel className="check-condition small vertical">コンディション</Ryulabel>
+      <Ryurow className="check-condition">
+        <Ryulabel className="check-condition small h2vr_10">コンディション</Ryulabel>
         <Ryudata className="check-condition nopadding">
           <Ryurow><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
           <Ryurow><Ryudata>👤 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
@@ -152,7 +152,7 @@ function RyutamaCheck(props) {
           <Ryurow><Ryudata>💀</Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
-      <Ryurow>
+      <Ryurow className="check-travel-initiative">
         <Ryudata className="check-travel center">
           ＜旅歩きルールの流れ＞<br/>
           <span className="small">
