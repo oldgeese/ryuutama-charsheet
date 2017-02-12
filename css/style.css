@@ -68,8 +68,6 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* display: inline-block; */
-  /* padding-top: 20px; */
 }
 
 .ryutama-title-english {
@@ -81,8 +79,6 @@ div {
   align-items: center;
   justify-content: center;
   letter-spacing: 0.3em;
-  /* display: inline-block; */
-  /* vertical-align: middle; */
 }
 
 .traveler-character-sheet {
