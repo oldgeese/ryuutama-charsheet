@@ -1,0 +1,9 @@
+[ignore]
+<PROJECT_ROOT>/__tests__/.*
+.*/node_modules/superagent-jsonp/bower.json
+
+[include]
+
+[libs]
+
+[options]

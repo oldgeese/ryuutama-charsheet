@@ -1,56 +1,59 @@
+// @flow
 import React from 'react';
 import getSheetData from './sheetdata.jsx';
 import {Link} from 'react-router';
 import css from '../css/style.css';
 
-const type = {
-  0: "",
-  1: "アタック",
-  2: "テクニック",
-  3: "マジック"
+type PropsWithChildren = {
+  className?: string,
+  children?: Element<any>,
 };
 
-function joinIgnoreFalsy(list, separator=",") {
+type CharDataJson = {
+  [key:string]: string,
+};
+
+function joinIgnoreFalsy(list: Array<any>, separator: string=",") {
   return list.filter((v)=>(v)).join(separator);
 }
 
-function Ryutable(props) {
+function Ryutable(props: PropsWithChildren) {
   return (
     <div className={"table " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryurow(props) {
+function Ryurow(props: PropsWithChildren) {
   return (
     <div className={"row " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryulabel(props) {
+function Ryulabel(props: PropsWithChildren) {
   return (
     <div className={"cell label " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryudata(props) {
+function Ryudata(props: PropsWithChildren) {
   return (
     <div className={"cell data " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyutamaSheetTitle(props) {
+function RyutamaSheetTitle(props: PropsWithChildren) {
   return (
     <div className={"title-area " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyuCharFigure(props) {
+function RyuCharFigure(props: PropsWithChildren) {
   return (
     <div className={"figure-area " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyutamaClass(props) {
+function RyutamaClass(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <Ryutable className="class">
@@ -93,7 +96,7 @@ function RyutamaClass(props) {
   );
 }
 
-function RyutamaFeature(props) {
+function RyutamaFeature(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <Ryutable className="feature">
@@ -118,7 +121,7 @@ function RyutamaFeature(props) {
   );
 }
 
-function RyutamaCheck(props) {
+function RyutamaCheck(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <Ryutable className="check">
@@ -171,7 +174,7 @@ function RyutamaCheck(props) {
   );
 }
 
-function RyutamaEquipment(props) {
+function RyutamaEquipment(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="equipment">
@@ -390,7 +393,7 @@ function RyutamaEquipment(props) {
   );
 }
 
-function RyutamaModifier(props) {
+function RyutamaModifier(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="modifier">
@@ -536,7 +539,7 @@ function RyutamaModifier(props) {
   );
 }
 
-function RyutamaBadStatus(props) {
+function RyutamaBadStatus(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="badstatus">
@@ -565,7 +568,7 @@ function RyutamaBadStatus(props) {
   );
 }
 
-function RyutamaHeader(props) {
+function RyutamaHeader() {
   return (
     <div className="ryutama-header">
       <RyutamaSheetTitle>
@@ -593,6 +596,15 @@ function RyutamaHeader(props) {
 }
 
 class RyutamaSheet extends React.Component {
+  static TYPE() {
+    return {
+      '0': "",
+      '1': "アタック",
+      '2': "テクニック",
+      '3': "マジック"
+    }
+  };
+
   render() {
     const d = this.props.data;
     return (
@@ -624,7 +636,7 @@ class RyutamaSheet extends React.Component {
               </div>
               <div className="cell label type_id">タイプ</div>
               <div className="cell datagroup type_id">
-                <span className="data type_id">{type[d.type_id]}</span>/<span className="data type2">{type[d.type2]}</span>
+                <span className="data type_id">{RyutamaSheet.TYPE()[d.type_id]}</span>/<span className="data type2">{RyutamaSheet.TYPE()[d.type2]}</span>
               </div>
             </div>
           </div>
@@ -645,8 +657,19 @@ class RyutamaSheet extends React.Component {
   }
 }
 
+type CharSheetProps = {
+  params: {charId: string},
+  charId: string,
+};
+
 class CharSheet extends React.Component {
-  constructor(props) {
+  state: {
+    charId: string,
+    data: CharDataJson,
+    error: ?Error,
+  };
+
+  constructor(props: CharSheetProps) {
     super(props);
     this.state = {
       charId: "",
@@ -654,7 +677,7 @@ class CharSheet extends React.Component {
       error: null,
     };
   }
-  retrieveSheetData(charId) {
+  retrieveSheetData(charId: string) {
     this.setState({
       charId: charId,
       data: {},
@@ -679,7 +702,7 @@ class CharSheet extends React.Component {
     this.setState({charId: charId});
     this.retrieveSheetData(charId);
   }
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: CharSheetProps) {
     let charId = this.state.charId;
     if (nextProps.charId) {
       charId = nextProps.charId;

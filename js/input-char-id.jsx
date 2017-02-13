@@ -1,7 +1,16 @@
+// @flow
 import React from 'react';
 
+type State = {
+  charId: string,
+};
+
 class InputCharId extends React.Component {
-  constructor(props) {
+  state: State;
+  handleInputChange: (event: Event)=>void;
+  handleSubmit: (event: Event)=>void;
+
+  constructor(props: any) {
     super(props);
     this.state = {
       charId: "962930"
@@ -10,13 +19,16 @@ class InputCharId extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleInputChange(event) {
-    const name = event.target.name;
-    this.setState({
-      [name]: event.target.value,
-    });
+  handleInputChange(event: Event) {
+    let target: HTMLInputElement;
+    if (event.target instanceof HTMLInputElement) {
+      const name = event.target.name;
+      this.setState({
+        [name]: event.target.value,
+      });
+    }
   }
-  handleSubmit(event) {
+  handleSubmit(event: Event) {
     event.preventDefault();
     if (this.state.charId) {
       const path = "/char/" + this.state.charId;
