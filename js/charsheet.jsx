@@ -127,32 +127,44 @@ function RyutamaCheck(props: {data: CharDataJson}) {
     <Ryutable className="check">
       <Ryurow className="check-ability">
         <Ryulabel className="check-ability h2vr_10">能力値</Ryulabel>
-        <Ryudata className="check-ability-str">体力</Ryudata>
-        <Ryudata className="check-ability-dex">敏捷</Ryudata>
-        <Ryudata className="check-ability-int">知力</Ryudata>
-        <Ryudata className="check-ability-spi">精神</Ryudata>
+        <Ryudata className="check-ability-str relative">
+          体力<br/>d{d.NP1}
+          <div className="check-ability-image"></div>
+        </Ryudata>
+        <Ryudata className="check-ability-dex relative">
+          敏捷<br/>d{d.NP2}
+          <div className="check-ability-image"></div>
+        </Ryudata>
+        <Ryudata className="check-ability-int relative">
+          知力<br/>d{d.NP3}
+          <div className="check-ability-image"></div>
+        </Ryudata>
+        <Ryudata className="check-ability-spi relative">
+          精神<br/>d{d.NP4}
+          <div className="check-ability-image"></div>
+        </Ryudata>
       </Ryurow>
       <Ryurow className="check-hp-mp">
         <Ryulabel className="check-hp">HP</Ryulabel>
         <Ryudata className="check-hp nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【最大HP＝体力×２】</Ryudata></Ryurow>
-          <Ryurow><Ryudata>💟</Ryudata></Ryurow>
+          <Ryurow className="check-hp-formula"><Ryudata className="center reverse-color">【最大HP＝体力×２】</Ryudata></Ryurow>
+          <Ryurow className="check-hp-value"><Ryudata className="check-hp-value"><span className="hp-mp-mark">💟</span> &nbsp; {d.NP5}⇒</Ryudata></Ryurow>
         </Ryudata>
         <Ryulabel className="check-mp">MP</Ryulabel>
         <Ryudata className="check-mp nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【最大MP＝精神×２】</Ryudata></Ryurow>
-          <Ryurow><Ryudata>✴️</Ryudata></Ryurow>
+          <Ryurow className="check-mp-formula"><Ryudata className="center reverse-color">【最大MP＝精神×２】</Ryudata></Ryurow>
+          <Ryurow className="check-mp-value"><Ryudata className="check-mp-value"><span className="hp-mp-mark">✴️</span> &nbsp; {d.NP6}⇒</Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
       <Ryurow className="check-condition">
         <Ryulabel className="check-condition small h2vr_10">コンディション</Ryulabel>
         <Ryudata className="check-condition nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
-          <Ryurow><Ryudata>👤 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
+          <Ryurow className="check-condition-formula"><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
+          <Ryurow className="check-condition-value"><Ryudata className="check-condition-value"><span className="condition-mark">👤</span> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
         </Ryudata>
         <Ryudata className="check-fumble nopadding">
-          <Ryurow><Ryulabel className="center">1ゾロポイント</Ryulabel></Ryurow>
-          <Ryurow><Ryudata>💀</Ryudata></Ryurow>
+          <Ryurow className="check-fumble-label"><Ryulabel className="center">1ゾロポイント</Ryulabel></Ryurow>
+          <Ryurow className="check-fumble-value"><Ryudata><span className="fumble-mark">💀</span></Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
       <Ryurow className="check-travel-initiative">

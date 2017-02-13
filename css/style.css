@@ -18,6 +18,7 @@ html {
 body {
   margin:0;
   font-size: 80%;
+  font-family: sans-serif;
 }
 
 div.container {
@@ -339,6 +340,7 @@ div.class-entry:nth-child(5) .cell {
 
 .nopadding {
   padding: 0;
+  vertical-align: initial;
 }
 
 .center {
@@ -351,7 +353,7 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .small {
-  font-size: 50%;
+  font-size: 0.6rem;
 }
 
 .vertical {
@@ -393,9 +395,86 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .table.check>.row.check-travel-initiative {
-  height: 15%;
+  height: 16%;
 }
 
 .label.check-ability, .label.check-hp, .label.check-condition {
   width: 6%;
+}
+
+.data[class*="check-ability-"] {
+  font-size: 1.2rem;
+}
+
+.check-ability-image {
+  border-radius: 12%;
+  background-color: #CCCCCC;
+  width: 52.8%;
+  height: 76%;
+  position: absolute;
+  top: 13%;
+  left: 39%;
+}
+
+.data.check-hp>.row.check-hp-formula, .data.check-mp>.row.check-mp-formula, .data.check-condition>.row.check-condition-formula, .data.check-fumble>.row.check-fumble-label {
+  height: 30%;
+}
+
+.check-hp>.row.check-hp-value, .check-mp>.row.check-mp-value, .check-condition>.row.check-condition-value, .check-fumble>.row.check-fumble-value {
+  height: 70%;
+}
+
+.data.check-hp-value, .data.check-mp-value {
+  font-size: 1.1rem;
+}
+
+.data.check-condition-value {
+  letter-spacing: 0.04em;
+}
+
+.hp-mp-mark {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.condition-mark {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.fumble-mark {
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+
+.data.check-condition {
+  width: 70.5%;
+}
+
+.data.check-travel {
+  width: 76.5%;
+}
+
+.label.check-initiative {
+  width: 15%;
+}
+
+div.equipment {
+  height: 31.5%;
+}
+
+div.equipment-header {
+  height: 13.7%;
+}
+
+.table.equipment {
+  height: 86.3%;
+}
+
+.table.equipment>.row {
+  height: 34%;
+}
+
+.table.equipment>.row .row {
+  height: 50%;
 }
