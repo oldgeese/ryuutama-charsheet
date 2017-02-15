@@ -1,63 +1,66 @@
+// @flow
 import React from 'react';
 import getSheetData from './sheetdata.jsx';
 import {Link} from 'react-router';
 import css from '../css/style.css';
 
-const type = {
-  0: "",
-  1: "アタック",
-  2: "テクニック",
-  3: "マジック"
+type PropsWithChildren = {
+  className?: string,
+  children?: Element<any>,
 };
 
-function joinIgnoreFalsy(list, separator=",") {
+type CharDataJson = {
+  [key:string]: string,
+};
+
+function joinIgnoreFalsy(list: Array<any>, separator: string=",") {
   return list.filter((v)=>(v)).join(separator);
 }
 
-function Ryutable(props) {
+function Ryutable(props: PropsWithChildren) {
   return (
     <div className={"table " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryurow(props) {
+function Ryurow(props: PropsWithChildren) {
   return (
     <div className={"row " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryulabel(props) {
+function Ryulabel(props: PropsWithChildren) {
   return (
     <div className={"cell label " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryudata(props) {
+function Ryudata(props: PropsWithChildren) {
   return (
     <div className={"cell data " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyutamaSheetTitle(props) {
+function RyutamaSheetTitle(props: PropsWithChildren) {
   return (
     <div className={"title-area " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyuCharFigure(props) {
+function RyuCharFigure(props: PropsWithChildren) {
   return (
     <div className={"figure-area " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyutamaClass(props) {
+function RyutamaClass(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <Ryutable className="class">
       <Ryurow className="class-header">
         <Ryulabel className="class-ability">クラス能力</Ryulabel>
         <Ryulabel className="class-check-ability">判定能力値</Ryulabel>
-        <Ryulabel className="class-effect">効果</Ryulabel>
+        <Ryulabel className="class-effect">効 果</Ryulabel>
       </Ryurow>
       <Ryurow className="class-entry">
         <Ryudata className="class-ability-entry">{d.cls_name[0]}</Ryudata>
@@ -93,14 +96,14 @@ function RyutamaClass(props) {
   );
 }
 
-function RyutamaFeature(props) {
+function RyutamaFeature(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <Ryutable className="feature">
       <Ryurow>
         <Ryulabel className="feature-proficienty-weapon">習得武器</Ryulabel>
         <Ryudata className="feature-proficienty-weapon"></Ryudata>
-        <Ryulabel className="feature-weather">得意<br/>地形/天候</Ryulabel>
+        <Ryulabel className="feature-weather">得意<br/>地形／天候</Ryulabel>
         <Ryudata className="feature-weather"></Ryudata>
         <Ryulabel className="feature-favorite-item">お気に入りアイテム</Ryulabel>
         <Ryudata className="feature-favorite-item"></Ryudata>
@@ -118,41 +121,53 @@ function RyutamaFeature(props) {
   );
 }
 
-function RyutamaCheck(props) {
+function RyutamaCheck(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <Ryutable className="check">
-      <Ryurow>
-        <Ryulabel className="check-ability vertical">能力値</Ryulabel>
-        <Ryudata className="check-ability-con">体力</Ryudata>
-        <Ryudata className="check-ability-dex">敏捷</Ryudata>
-        <Ryudata className="check-ability-int">知力</Ryudata>
-        <Ryudata className="check-ability-psy">精神</Ryudata>
+      <Ryurow className="check-ability">
+        <Ryulabel className="check-ability h2vr_10">能力値</Ryulabel>
+        <Ryudata className="check-ability-str relative">
+          体力<br/>d{d.NP1}
+          <div className="check-ability-image"></div>
+        </Ryudata>
+        <Ryudata className="check-ability-dex relative">
+          敏捷<br/>d{d.NP2}
+          <div className="check-ability-image"></div>
+        </Ryudata>
+        <Ryudata className="check-ability-int relative">
+          知力<br/>d{d.NP3}
+          <div className="check-ability-image"></div>
+        </Ryudata>
+        <Ryudata className="check-ability-spi relative">
+          精神<br/>d{d.NP4}
+          <div className="check-ability-image"></div>
+        </Ryudata>
       </Ryurow>
-      <Ryurow>
+      <Ryurow className="check-hp-mp">
         <Ryulabel className="check-hp">HP</Ryulabel>
         <Ryudata className="check-hp nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【最大HP=体力×２】</Ryudata></Ryurow>
-          <Ryurow><Ryudata>💟</Ryudata></Ryurow>
+          <Ryurow className="check-hp-formula"><Ryudata className="center reverse-color">【最大HP＝体力×２】</Ryudata></Ryurow>
+          <Ryurow className="check-hp-value"><Ryudata className="check-hp-value"><span className="hp-mp-mark">💟</span> &nbsp; {d.NP5}⇒</Ryudata></Ryurow>
         </Ryudata>
         <Ryulabel className="check-mp">MP</Ryulabel>
         <Ryudata className="check-mp nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【最大MP=精神×２】</Ryudata></Ryurow>
-          <Ryurow><Ryudata>✴️</Ryudata></Ryurow>
+          <Ryurow className="check-mp-formula"><Ryudata className="center reverse-color">【最大MP＝精神×２】</Ryudata></Ryurow>
+          <Ryurow className="check-mp-value"><Ryudata className="check-mp-value"><span className="hp-mp-mark">✴️</span> &nbsp; {d.NP6}⇒</Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
-      <Ryurow>
-        <Ryulabel className="check-condition small vertical">コンディション</Ryulabel>
+      <Ryurow className="check-condition">
+        <Ryulabel className="check-condition small h2vr_10">コンディション</Ryulabel>
         <Ryudata className="check-condition nopadding">
-          <Ryurow><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
-          <Ryurow><Ryudata>👤 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
+          <Ryurow className="check-condition-formula"><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
+          <Ryurow className="check-condition-value"><Ryudata className="check-condition-value"><span className="condition-mark">👤</span> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
         </Ryudata>
         <Ryudata className="check-fumble nopadding">
-          <Ryurow><Ryulabel className="center">1ゾロポイント</Ryulabel></Ryurow>
-          <Ryurow><Ryudata>💀</Ryudata></Ryurow>
+          <Ryurow className="check-fumble-label"><Ryulabel className="center">1ゾロポイント</Ryulabel></Ryurow>
+          <Ryurow className="check-fumble-value"><Ryudata><span className="fumble-mark">💀</span></Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
-      <Ryurow>
+      <Ryurow className="check-travel-initiative">
         <Ryudata className="check-travel center">
           ＜旅歩きルールの流れ＞<br/>
           <span className="small">
@@ -171,7 +186,7 @@ function RyutamaCheck(props) {
   );
 }
 
-function RyutamaEquipment(props) {
+function RyutamaEquipment(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="equipment">
@@ -390,7 +405,7 @@ function RyutamaEquipment(props) {
   );
 }
 
-function RyutamaModifier(props) {
+function RyutamaModifier(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="modifier">
@@ -536,7 +551,7 @@ function RyutamaModifier(props) {
   );
 }
 
-function RyutamaBadStatus(props) {
+function RyutamaBadStatus(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="badstatus">
@@ -565,7 +580,7 @@ function RyutamaBadStatus(props) {
   );
 }
 
-function RyutamaHeader(props) {
+function RyutamaHeader() {
   return (
     <div className="ryutama-header">
       <RyutamaSheetTitle>
@@ -593,6 +608,15 @@ function RyutamaHeader(props) {
 }
 
 class RyutamaSheet extends React.Component {
+  static TYPE() {
+    return {
+      '0': "",
+      '1': "アタック",
+      '2': "テクニック",
+      '3': "マジック"
+    }
+  };
+
   render() {
     const d = this.props.data;
     return (
@@ -624,7 +648,7 @@ class RyutamaSheet extends React.Component {
               </div>
               <div className="cell label type_id">タイプ</div>
               <div className="cell datagroup type_id">
-                <span className="data type_id">{type[d.type_id]}</span>/<span className="data type2">{type[d.type2]}</span>
+                <span className="data type_id">{RyutamaSheet.TYPE()[d.type_id]}</span>/<span className="data type2">{RyutamaSheet.TYPE()[d.type2]}</span>
               </div>
             </div>
           </div>
@@ -645,8 +669,19 @@ class RyutamaSheet extends React.Component {
   }
 }
 
+type CharSheetProps = {
+  params: {charId: string},
+  charId: string,
+};
+
 class CharSheet extends React.Component {
-  constructor(props) {
+  state: {
+    charId: string,
+    data: CharDataJson,
+    error: ?Error,
+  };
+
+  constructor(props: CharSheetProps) {
     super(props);
     this.state = {
       charId: "",
@@ -654,7 +689,7 @@ class CharSheet extends React.Component {
       error: null,
     };
   }
-  retrieveSheetData(charId) {
+  retrieveSheetData(charId: string) {
     this.setState({
       charId: charId,
       data: {},
@@ -679,7 +714,7 @@ class CharSheet extends React.Component {
     this.setState({charId: charId});
     this.retrieveSheetData(charId);
   }
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: CharSheetProps) {
     let charId = this.state.charId;
     if (nextProps.charId) {
       charId = nextProps.charId;
