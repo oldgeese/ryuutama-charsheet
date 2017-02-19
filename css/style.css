@@ -120,6 +120,7 @@ div {
   display: table-cell;
   border-left: 1px solid #000000;
   border-top: 1px solid #000000;
+  height: 100%;
 }
 
 .cell:first-child {
@@ -340,7 +341,6 @@ div.class-entry:nth-child(5) .cell {
 
 .nopadding {
   padding: 0;
-  vertical-align: initial;
 }
 
 .center {
@@ -356,6 +356,10 @@ div.class-entry:nth-child(5) .cell {
   font-size: 0.6rem;
 }
 
+.line-height-small {
+  line-height: 0.6rem;
+}
+
 .vertical {
   /* -webkit-writing-mode: vertical-rl; */
   /* -ms-writing-mode: tb-rl; */
@@ -368,7 +372,7 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .left-top-tip {
-  font-size: 30%;
+  font-size: 50%;
   position: absolute;
   top: 0;
   left: 0;
@@ -395,33 +399,40 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .table.check>.row.check-travel-initiative {
-  height: 16%;
+  height: 14%;
 }
 
-.label.check-ability, .label.check-hp, .label.check-condition {
+.label.check-ability, .label.check-hp, .label.check-mp, .label.check-condition {
   width: 6%;
 }
 
-.data[class*="check-ability-"] {
+.data.check-ability-str, .data.check-ability-dex, .data.check-ability-int, .data.check-ability-spi {
   font-size: 1.2rem;
+  width: 9%;
 }
 
-.check-ability-image {
+.data.check-ability-image {
+  width: 14.5%;
+  border-left: 0;
+}
+
+div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-image-int, div.check-ability-image-spi {
   border-radius: 12%;
   background-color: #CCCCCC;
-  width: 52.8%;
+  width: 82.6%;
   height: 76%;
-  position: absolute;
-  top: 13%;
-  left: 39%;
+}
+
+.data.check-hp, .data.check-mp {
+  width: 44%;
 }
 
 .data.check-hp>.row.check-hp-formula, .data.check-mp>.row.check-mp-formula, .data.check-condition>.row.check-condition-formula, .data.check-fumble>.row.check-fumble-label {
-  height: 30%;
+  height: 35%;
 }
 
 .check-hp>.row.check-hp-value, .check-mp>.row.check-mp-value, .check-condition>.row.check-condition-value, .check-fumble>.row.check-fumble-value {
-  height: 70%;
+  height: 65%;
 }
 
 .data.check-hp-value, .data.check-mp-value {
@@ -437,9 +448,21 @@ div.class-entry:nth-child(5) .cell {
   vertical-align: middle;
 }
 
+.data.check-condition {
+  width: 70.5%;
+}
+
+.data.check-fumble {
+  width: 23.5%;
+}
+
 .condition-mark {
   font-size: 1.5rem;
   vertical-align: middle;
+}
+
+.check-fumble-label>.label {
+  height: 100%;
 }
 
 .fumble-mark {
@@ -447,12 +470,8 @@ div.class-entry:nth-child(5) .cell {
   vertical-align: middle;
 }
 
-.data.check-condition {
-  width: 70.5%;
-}
-
 .data.check-travel {
-  width: 76.5%;
+  width: 76.6%;
 }
 
 .label.check-initiative {
@@ -478,3 +497,199 @@ div.equipment-header {
 .table.equipment>.row .row {
   height: 50%;
 }
+
+div.equipment-header, div.modifier-header, div.badstatus-header {
+  font-size: 1.1rem;
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.label.weapon, .label.armor, .label.clothing {
+  width: 6%;
+}
+
+.data.weapon-name, .data.armor-name, .data.clothing-name1, .data.clothing-effect1, .data.clothing-name2, .data.clothing-effect2 {
+  width: 23.6%;
+}
+
+.data.weapon-hit, .data.armor-defense {
+  width: 15%;
+}
+
+.data.weapon-damage, .data.armor-penalty {
+  width: 15%;
+}
+
+.data.weapon-constitution, .data.armor-constitution {
+  width: 7.5%;
+}
+
+.data.weapon-effect, .data.armor-effect {
+  width: 33%;
+}
+
+.data.clothing-effect1, .data.clothing-effect2 {
+  font-size: 80%;
+}
+
+div.modifier {
+  height: 22.2%;
+}
+
+div.modifier-header {
+  height: 20%;
+}
+
+.table.modifier {
+  height: 80%;
+}
+
+.table.modifier>.row.modifier-label-row {
+  height: 33.4%;
+
+}
+
+.table.modifier>.row.modifier-value-row {
+  height: 16.9%;
+}
+
+.table.modifier>.row.modifier-label-row .row {
+  height: 51%;
+}
+
+.table.modifier>.row.modifier-value-row .row{
+  height: 100%;
+}
+
+.label.modifier-bonus-label, .label.modifier-penalty-label, .data.modifier-bonus-label-values, .data.modifier-penalty-label-values {
+  width: 14.5%;
+}
+
+.data.modifier-bonus-lv1, .data.modifier-bonus-lv1-values {
+  width: 15.7%;
+}
+
+.data.modifier-bonus-lv1>.row:last-child>.data {
+  width: 50%;
+}
+
+.data.modifier-bonus-lv1-values>.row>.data {
+  width: 50%;
+}
+
+.data.modifier-bonus-lv2, .data.modifier-bonus-lv2-values {
+  width: 23.5%;
+}
+
+.data.modifier-bonus-lv2>.row:last-child>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv2-values>.row>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv3, .data.modifier-bonus-lv3-values {
+  width: 23.5%;
+}
+
+.data.modifier-bonus-lv3>.row:last-child>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv3-values>.row>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv4, .data.modifier-bonus-lv4-values {
+  width: 15.7%;
+}
+
+.data.modifier-bonus-lv4>.row:last-child>.data{
+  width: 50%;
+}
+
+.data.modifier-bonus-lv4-values>.row>.data {
+  width: 50%;
+}
+
+.data.modifier-bonus-lv5, .data.modifier-bonus-lv5-values {
+  width: 7.8%;
+}
+
+.data.modifier-bonus-lv5>.row:last-child>.data{
+  width: 100%;
+}
+
+.data.modifier-bonus-lv5-values>.row>.data {
+  width: 100%;
+}
+
+.data.modifier-penalty-plus1, .data.modifier-penalty-plus1-values {
+  width: 39.2%;
+}
+
+.data.modifier-penalty-plus1>.row:last-child>.data{
+  width: 20%;
+}
+
+.data.modifier-penalty-plus1-values>.row>.data {
+  width: 20%;
+}
+
+.data.modifier-penalty-plus3, .data.modifier-penalty-plus3-values {
+  width: 31.4%;
+}
+
+.data.modifier-penalty-plus3>.row:last-child>.data{
+  width: 25%;
+}
+
+.data.modifier-penalty-plus3-values>.row>.data {
+  width: 25%;
+}
+
+.data.modifier-penalty-plus5, .data.modifier-penalty-plus5-values {
+  width: 15.7%;
+}
+
+.data.modifier-penalty-plus5>.row:last-child>.data{
+  width: 50%;
+}
+
+.data.modifier-penalty-plus5-values>.row>.data {
+  width: 50%;
+}
+
+div.badstatus {
+  height: 15.5%;
+}
+
+div.badstatus-header {
+  height: 30%;
+}
+
+.table.badstatus {
+  height: 70%;
+}
+
+.table.badstatus>.row {
+  height: 50%;
+}
+
+.label.badstatus-physical, .label.badstatus-mental {
+  width: 6%;
+}
+
+.data.badstatus-injury-label, .data.badstatus-tired-label,
+.data.badstatus-poison-label, .data.badstatus-muddled-label,
+.data.badstatus-sick-label, .data.badstatus-shock-label {
+  width: 22.5%;
+}
+
+.data.badstatus-injury-value, .data.badstatus-tired-value,
+.data.badstatus-poison-value, .data.badstatus-muddled-value,
+.data.badstatus-sick-value, .data.badstatus-shock-value {
+  width: 8.5%;
+}
+
