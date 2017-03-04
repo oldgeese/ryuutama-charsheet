@@ -6,7 +6,7 @@ compile:
     - npm run build
   post:
     - mkdir -p netlify
-    - cp public/* netlify/
+    - cp -a public/* netlify/
 general:
   branches:
     only:
