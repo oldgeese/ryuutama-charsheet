@@ -40,10 +40,22 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
-    "react-redux": "^5.0.1",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.2.0",
+    "babel-preset-react": "^6.23.0",
+    "bowser": "^1.6.0",
+    "css-loader": "^0.26.2",
+    "eslint": "^3.17.0",
+    "eslint-plugin-react": "^6.10.0",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "react-emojione2": "^2.2.18",
+    "react-redux": "^5.0.3",
     "react-router": "^3.0.2",
-    "superagent": "^3.4.2",
-    "superagent-jsonp": "^0.1.1"
+    "superagent": "^3.5.0",
+    "superagent-jsonp": "^0.1.1",
+    "webpack-dev-server": "^2.4.1"
   },
   "eslintConfig": {
     "extends": "react-app"
