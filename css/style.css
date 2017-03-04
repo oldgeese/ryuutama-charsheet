@@ -1,18 +1,11 @@
 @media print {
   .page {
     page-break-after: always;
-    width: 182mm;
-    height: 257mm;
   }
 
   .page:last-child {
     page-break-after: auto;
   }
-
-}
-
-html {
-  background-color: #FAFAFA;
 }
 
 body {
@@ -22,27 +15,24 @@ body {
 }
 
 div.container {
-  width: 84.065934066%;
-  height: 90.661478599%;
+  width: 153mm;
+  height: 233mm;
   margin-left:auto;
   margin-right:auto;
   padding-top: 5.7%;
-  border: 1px solid #FAFAFA;
 }
 
 div {
   box-sizing: border-box;
 }
 
-
 @page {
   size: B5 portrait;
+  margin: 0;
 }
 
 .page {
-  background-color: #FFF;
-  width: calc(182mm);
-  height: calc(257mm);
+  background-color: #FFFFFF;
 }
 
 .figure-area {
@@ -96,7 +86,16 @@ div {
     black 1px 0px 0px,
     black 0px 1px 0px,
     black -1px 0px 0px,
-    black 0px -1px 0px;
+    black 0px -1px 0px,
+    black 1px 1px 0px,
+    black -1px 1px 0px,
+    black 1px -1px 0px,
+    black -1px -1px 0px;
+}
+
+.chrome {
+  color: #000000;
+  text-shadow: none;
 }
 
 .ryutama-header {
@@ -269,10 +268,14 @@ div {
   width: 23%;
 }
 
-div.class-entry:nth-child(5) .cell {
-  border-top-style: double;
-  border-top-width: 3px;
+.table.class>.row.class-entry-spacer {
+  height:2px;
 }
+
+.data.class-entry-spacer-cell {
+  width: 100%;
+}
+
 
 .data.class-effect-entry {
   font-size: 80%;
@@ -399,7 +402,7 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .table.check>.row.check-travel-initiative {
-  height: 14%;
+  height: 16%;
 }
 
 .label.check-ability, .label.check-hp, .label.check-mp, .label.check-condition {
@@ -444,8 +447,6 @@ div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-imag
 }
 
 .hp-mp-mark {
-  font-size: 1.5rem;
-  vertical-align: middle;
 }
 
 .data.check-condition {
@@ -457,8 +458,6 @@ div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-imag
 }
 
 .condition-mark {
-  font-size: 1.5rem;
-  vertical-align: middle;
 }
 
 .check-fumble-label>.label {
@@ -466,12 +465,11 @@ div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-imag
 }
 
 .fumble-mark {
-  font-size: 1.5rem;
-  vertical-align: middle;
 }
 
 .data.check-travel {
   width: 76.6%;
+  line-height: 1rem;
 }
 
 .label.check-initiative {
@@ -693,3 +691,12 @@ div.badstatus-header {
   width: 8.5%;
 }
 
+.badstatus-mark, .badstatus-explanation {
+  display:inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.5rem;
+}
