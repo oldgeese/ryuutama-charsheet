@@ -1,4 +1,4 @@
-jest.mock('../js/sheetdata.jsx');
+jest.mock('../js/data.jsx');
 
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
