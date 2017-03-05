@@ -60,6 +60,7 @@ class Input extends React.Component {
     }
   }
   render() {
+    document.title = "りゅうたまキャラシート";
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -86,6 +87,7 @@ class Input extends React.Component {
           <div>
             <input type="submit" name="tag" value="タグ検索"  onClick={this.handleClickSearchButton}/>
             <input type="submit" name="title" value="タイトル検索" onClick={this.handleClickSearchButton}/>
+            <input type="submit" name="name" value="PC名検索" onClick={this.handleClickSearchButton}/>
           </div>
         </form>
       </div>
