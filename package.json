@@ -1,7 +1,7 @@
 {
   "name": "ryutama-charsheet",
   "version": "1.0.0",
-  "description": "Japanese TRPG, Ryuutama, Character sheet's layout concersion app.",
+  "description": "Japanese TRPG, Ryuutama, Character sheet's layout conversion app.",
   "main": "js/app.jsx",
   "scripts": {
     "test": "jest --no-watchman",

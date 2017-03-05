@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import getSheetData from './sheetdata.jsx';
+import {sheetData} from './data.jsx';
 import {Link} from 'react-router';
 import css from '../css/style.css';
 import {emojify} from 'react-emojione2';
@@ -818,7 +818,7 @@ class CharSheet extends React.Component {
       data: {},
       error: null,
     });
-    getSheetData(charId).then((res) => {
+    sheetData(charId).then((res) => {
       if (res.body) {
         this.setState({data: res.body});
       }

@@ -5,8 +5,12 @@ import jsonp from 'superagent-jsonp';
 const baseUrl: string = "https://pure-anchorage-83238.herokuapp.com/";
 const postfix: string = ".json"
 const timeout: number = 10000;
-const numIdLength: number = 6;
-const searchBaseUrl: string = "http://charasheet.vampire-blood.net/list_ryutama.json";
+const numIdLength: number = 7;
+const searchBaseUrl: string = "https://pure-anchorage-83238.herokuapp.com/list_ryutama.json";
+
+type QueryObject = {
+  [mode: string]: string
+}
 
 export function sheetData(id: string) {
   const isMD5: boolean|string = id && id.length > numIdLength;
@@ -16,16 +20,16 @@ export function sheetData(id: string) {
   return getJsonp(baseUrl + id + postfix);
 }
 
-export function searchTag(searchString: string) {
-  return getJsonp(searchBaseUrl, {tag: searchString});
+export function search(mode:string, searchString: string) {
+  return getJsonp(searchBaseUrl, {[mode]: searchString});
 }
 
-function getJsonp(url: string, query?: object, timeout?: number=timeout) {
-  let request = request.get(url);
+function getJsonp(url: string, query?: QueryObject) {
+  let requested = request.get(url);
   if (query) {
-    request = request.query(query);
+    requested = requested.query(query);
   }
-  request = request.use(jsonp({timeout: timeout}));
+  requested = requested.use(jsonp({timeout: timeout}));
 
-  return request;
+  return requested;
 }

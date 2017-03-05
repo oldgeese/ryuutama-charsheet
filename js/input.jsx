@@ -3,24 +3,29 @@ import React from 'react';
 
 type State = {
   charId: string,
+  mode: string,
   searchString: string
 };
 
-class InputCharId extends React.Component {
+class Input extends React.Component {
   state: State;
   handleInputChange: (event: Event)=>void;
   handleSubmit: (event: Event)=>void;
   handleSubmitSearch: (event: Event)=>void;
+  handleClickSearchButton: (event: Event)=>void;
 
   constructor(props: any) {
     super(props);
     this.state = {
-      charId: "962930"
+      charId: "962930",
+      mode: "",
+      searchString: ""
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
+    this.handleClickSearchButton = this.handleClickSearchButton.bind(this);
   }
   handleInputChange(event: Event) {
     let target: HTMLInputElement;
@@ -35,12 +40,24 @@ class InputCharId extends React.Component {
     event.preventDefault();
     if (this.state.charId) {
       const path = "/char/" + this.state.charId;
-      this.context.router.push(path)
+      this.context.router.push(path);
     }
   }
   handleSubmitSearch(event: Event) {
     event.preventDefault();
-    const path = "/tag/" + this.state.searchString;
+    let target: HTMLFormElement;
+    if (event.target instanceof HTMLFormElement) {
+      // const path: string= "/char/?" + this.state.mode + "=" + encodeURIComponent(this.state.searchString);
+      const path: string= "/search/" + this.state.mode + "/" + encodeURIComponent(this.state.searchString);
+      this.context.router.push(path);
+    }
+  }
+  handleClickSearchButton(event: Event) {
+    let target: HTMLInputElement;
+    if (event.target instanceof HTMLInputElement) {
+      const name = event.target.name;
+      this.setState({mode: name});
+    }
   }
   render() {
     return (
@@ -67,15 +84,17 @@ class InputCharId extends React.Component {
               value={this.state.searchString} onChange={this.handleInputChange} />
           </div>
           <div>
-            <input type="submit" name="tag" value="タグ検索" />
+            <input type="submit" name="tag" value="タグ検索"  onClick={this.handleClickSearchButton}/>
+            <input type="submit" name="title" value="タイトル検索" onClick={this.handleClickSearchButton}/>
           </div>
+        </form>
       </div>
     );
   }
 }
 
-InputCharId.contextTypes = {
+Input.contextTypes = {
     router: React.PropTypes.object
 }
 
-export default InputCharId;
+export default Input;
