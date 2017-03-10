@@ -446,7 +446,14 @@ div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-imag
   letter-spacing: 0.04em;
 }
 
-.hp-mp-mark {
+.hp-mp-mark img,
+.condition-mark img,
+.fumble-mark img,
+.equipment-mark img,
+.badstatus-mark img {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
 }
 
 .data.check-condition {
@@ -468,7 +475,7 @@ div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-imag
 }
 
 .data.check-travel {
-  width: 76.6%;
+  width: 76.7%;
   line-height: 1rem;
 }
 
@@ -564,7 +571,7 @@ div.modifier-header {
 }
 
 .data.modifier-bonus-lv1, .data.modifier-bonus-lv1-values {
-  width: 15.7%;
+  width: 15.6%;
 }
 
 .data.modifier-bonus-lv1>.row:last-child>.data {
@@ -576,7 +583,7 @@ div.modifier-header {
 }
 
 .data.modifier-bonus-lv2, .data.modifier-bonus-lv2-values {
-  width: 23.5%;
+  width: 23.4%;
 }
 
 .data.modifier-bonus-lv2>.row:last-child>.data {
@@ -588,7 +595,7 @@ div.modifier-header {
 }
 
 .data.modifier-bonus-lv3, .data.modifier-bonus-lv3-values {
-  width: 23.5%;
+  width: 23.4%;
 }
 
 .data.modifier-bonus-lv3>.row:last-child>.data {
@@ -600,7 +607,7 @@ div.modifier-header {
 }
 
 .data.modifier-bonus-lv4, .data.modifier-bonus-lv4-values {
-  width: 15.7%;
+  width: 15.6%;
 }
 
 .data.modifier-bonus-lv4>.row:last-child>.data{
@@ -612,7 +619,7 @@ div.modifier-header {
 }
 
 .data.modifier-bonus-lv5, .data.modifier-bonus-lv5-values {
-  width: 7.8%;
+  width: 7.7%;
 }
 
 .data.modifier-bonus-lv5>.row:last-child>.data{
@@ -624,7 +631,7 @@ div.modifier-header {
 }
 
 .data.modifier-penalty-plus1, .data.modifier-penalty-plus1-values {
-  width: 39.2%;
+  width: 39.0%;
 }
 
 .data.modifier-penalty-plus1>.row:last-child>.data{
@@ -636,7 +643,7 @@ div.modifier-header {
 }
 
 .data.modifier-penalty-plus3, .data.modifier-penalty-plus3-values {
-  width: 31.4%;
+  width: 31.2%;
 }
 
 .data.modifier-penalty-plus3>.row:last-child>.data{
@@ -648,7 +655,7 @@ div.modifier-header {
 }
 
 .data.modifier-penalty-plus5, .data.modifier-penalty-plus5-values {
-  width: 15.7%;
+  width: 15.5%;
 }
 
 .data.modifier-penalty-plus5>.row:last-child>.data{

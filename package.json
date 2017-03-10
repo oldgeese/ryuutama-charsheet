@@ -25,6 +25,7 @@
     "eslint-plugin-react": "^6.9.0",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "flow-bin": "^0.40.0",
+    "file-loader": "^0.10.1",
     "html-webpack-plugin": "^2.28.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^18.1.0",
@@ -40,7 +41,6 @@
     "bowser": "^1.6.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "react-emojione2": "^2.2.18",
     "react-router": "^3.0.2",
     "superagent": "^3.4.3",
     "superagent-jsonp": "^0.1.1"
@@ -51,6 +51,7 @@
   "jest": {
     "verbose": true,
     "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "../js/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     }
   }

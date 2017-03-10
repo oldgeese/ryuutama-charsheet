@@ -56,4 +56,6 @@ Session.vim
 dist
 public/bundle.js
 public/style.css
+public/images
+public/images/*
 */bundle.js
