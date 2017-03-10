@@ -17,7 +17,7 @@ class Input extends React.Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      charId: "962930",
+      charId: "",
       mode: "",
       searchString: ""
     };
