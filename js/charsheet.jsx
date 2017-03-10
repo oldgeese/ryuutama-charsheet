@@ -270,7 +270,7 @@ function RyutamaEquipment(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="equipment">
-      <div className="equipment-header">装備<img src={image_swords}/><span className="small">（装備中のアイテムのサイズは0になる）</span></div>
+      <div className="equipment-header">装備<span className="equipment-mark"><img src={image_swords}/></span><span className="small">（装備中のアイテムのサイズは0になる）</span></div>
       <Ryutable className="equipment">
         <Ryurow>
           <Ryulabel className="weapon">武器</Ryulabel>
