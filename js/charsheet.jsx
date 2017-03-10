@@ -3,8 +3,18 @@ import React from 'react';
 import getSheetData from './sheetdata.jsx';
 import {Link} from 'react-router';
 import css from '../css/style.css';
-import {emojify} from 'react-emojione2';
 import bowser from 'bowser';
+import image_condition from '../images/condition.png';
+import image_fumble from '../images/fumble.png';
+import image_heart from '../images/heart.png';
+import image_injury from '../images/injury.png';
+import image_muddled from '../images/muddled.png';
+import image_poison from '../images/poison.png';
+import image_shock from '../images/shock.png';
+import image_sick from '../images/sick.png';
+import image_star from '../images/star.png';
+import image_swords from '../images/swords.png';
+import image_tired from '../images/tired.png';
 
 type PropsWithChildren = {
   className?: string,
@@ -13,14 +23,6 @@ type PropsWithChildren = {
 
 type CharDataJson = {
   [key:string]: string,
-};
-
-const emojiOptions = {
-    styles: {
-        backgroundImage: 'url(/images/emojione.sprites.png)',
-        // width: '1.5rem',
-        // height: '1.5rem'
-    },
 };
 
 function joinIgnoreFalsy(list: Array<any>, separator: string=",") {
@@ -226,23 +228,23 @@ function RyutamaCheck(props: {data: CharDataJson}) {
         <Ryulabel className="check-hp">HP</Ryulabel>
         <Ryudata className="check-hp nopadding">
           <Ryurow className="check-hp-formula"><Ryudata className="center reverse-color">【最大HP＝体力×２】</Ryudata></Ryurow>
-          <Ryurow className="check-hp-value"><Ryudata className="check-hp-value"><span className="hp-mp-mark">{emojify(':heart_decoration:', emojiOptions)}</span> &nbsp; {d.NP5}⇒</Ryudata></Ryurow>
+          <Ryurow className="check-hp-value"><Ryudata className="check-hp-value"><span className="hp-mp-mark"><img src={image_heart}/></span> &nbsp; {d.NP5}⇒</Ryudata></Ryurow>
         </Ryudata>
         <Ryulabel className="check-mp">MP</Ryulabel>
         <Ryudata className="check-mp nopadding">
           <Ryurow className="check-mp-formula"><Ryudata className="center reverse-color">【最大MP＝精神×２】</Ryudata></Ryurow>
-          <Ryurow className="check-mp-value"><Ryudata className="check-mp-value"><span className="hp-mp-mark">{emojify(':star2:', emojiOptions)}</span> &nbsp; {d.NP6}⇒</Ryudata></Ryurow>
+          <Ryurow className="check-mp-value"><Ryudata className="check-mp-value"><span className="hp-mp-mark"><img src={image_star}/></span> &nbsp; {d.NP6}⇒</Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
       <Ryurow className="check-condition">
         <Ryulabel className="check-condition small h2vr_10">コンディション</Ryulabel>
         <Ryudata className="check-condition nopadding">
           <Ryurow className="check-condition-formula"><Ryudata className="center reverse-color">【体力＋精神】<span className="small">★10以上は絶好調の日!&nbsp;好きな能力値ひとつを1段階上昇</span></Ryudata></Ryurow>
-          <Ryurow className="check-condition-value"><Ryudata className="check-condition-value"><span className="condition-mark">{emojify(':bust_in_silhouette:', emojiOptions)}</span> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
+          <Ryurow className="check-condition-value"><Ryudata className="check-condition-value"><span className="condition-mark"><img src={image_condition}/></span> 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</Ryudata></Ryurow>
         </Ryudata>
         <Ryudata className="check-fumble nopadding">
           <Ryurow className="check-fumble-label"><Ryulabel className="center">1ゾロポイント</Ryulabel></Ryurow>
-          <Ryurow className="check-fumble-value"><Ryudata><span className="fumble-mark">{emojify(':skull:', emojiOptions)}</span></Ryudata></Ryurow>
+          <Ryurow className="check-fumble-value"><Ryudata><span className="fumble-mark"><img src={image_fumble}/></span></Ryudata></Ryurow>
         </Ryudata>
       </Ryurow>
       <Ryurow className="check-travel-initiative">
@@ -268,7 +270,7 @@ function RyutamaEquipment(props: {data: CharDataJson}) {
   const d = props.data;
   return (
     <div className="equipment">
-      <div className="equipment-header">装備{emojify(':crossed_swords:', emojiOptions)}<span className="small">（装備中のアイテムのサイズは0になる）</span></div>
+      <div className="equipment-header">装備<img src={image_swords}/><span className="small">（装備中のアイテムのサイズは0になる）</span></div>
       <Ryutable className="equipment">
         <Ryurow>
           <Ryulabel className="weapon">武器</Ryulabel>
@@ -643,21 +645,21 @@ function RyutamaBadStatus(props: {data: CharDataJson}) {
         <Ryurow>
           <Ryulabel className="badstatus-physical">肉体系</Ryulabel>
           <Ryudata className="badstatus-injury-label">
-            <div className="badstatus-mark">{emojify(':hospital:', emojiOptions)}</div>
+            <div className="badstatus-mark"><img src={image_injury}/></div>
             <div className="badstatus-explanation">
               大ケガ<br/><span className="small">【敏捷】−1段階</span>
             </div>
           </Ryudata>
           <Ryudata className="badstatus-injury-value"></Ryudata>
           <Ryudata className="badstatus-poison-label">
-            <div className="badstatus-mark">{emojify(':snake:', emojiOptions)}</div>
+            <div className="badstatus-mark"><img src={image_poison}/></div>
             <div className="badstatus-explanation">
               毒<br/><span className="small">【体力】−1段階</span>
             </div>
           </Ryudata>
           <Ryudata className="badstatus-poison-value"></Ryudata>
           <Ryudata className="badstatus-sick-label">
-            <div className="badstatus-mark">{emojify(':mask:', emojiOptions)}</div>
+            <div className="badstatus-mark"><img src={image_sick}/></div>
             <div className="badstatus-explanation">
               病気<br/><span className="small">【全能力】−1段階</span>
             </div>
@@ -667,21 +669,21 @@ function RyutamaBadStatus(props: {data: CharDataJson}) {
         <Ryurow>
           <Ryulabel className="badstatus-mental">精神系</Ryulabel>
           <Ryudata className="badstatus-tired-label">
-            <div className="badstatus-mark">{emojify(':weary:', emojiOptions)}</div>
+            <div className="badstatus-mark"><img src={image_tired}/></div>
             <div className="badstatus-explanation">
               だるい<br/><span className="small">【精神】−1段階</span>
             </div>
           </Ryudata>
           <Ryudata className="badstatus-tired-value"></Ryudata>
           <Ryudata className="badstatus-muddled-label">
-            <div className="badstatus-mark">{emojify(':blossom:', emojiOptions)}</div>
+            <div className="badstatus-mark"><img src={image_muddled}/></div>
             <div className="badstatus-explanation">
               ハイ<br/><span className="small">【知力】−1段階</span>
             </div>
           </Ryudata>
           <Ryudata className="badstatus-muddled-value"></Ryudata>
           <Ryudata className="badstatus-shock-label">
-            <div className="badstatus-mark">{emojify(':broken_heart:', emojiOptions)}</div>
+            <div className="badstatus-mark"><img src={image_shock}/></div>
             <div className="badstatus-explanation">
               ショック<br/><span className="small">【全能力】−1段階</span>
             </div>

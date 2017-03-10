@@ -20,6 +20,10 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           use: 'css-loader'
         })
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: 'file-loader?name=./images/[name].[ext]',
       }
     ]
   },
