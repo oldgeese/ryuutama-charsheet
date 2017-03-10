@@ -1,10 +1,10 @@
-jest.mock('../js/sheetdata.jsx');
+jest.mock('../js/data.jsx');
 
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 
 import CharSheet from '../js/charsheet.jsx';
-import getSheetData from '../js/sheetdata.jsx';
+import {sheetData} from '../js/data.jsx';
 
 describe('charsheet.jsx', () => {
   it('full DOM rendering', () => {
@@ -13,7 +13,7 @@ describe('charsheet.jsx', () => {
     // console.log(tree);
     expect(wrapper.find('CharSheet')).toHaveLength(1);
 
-    return getSheetData()
+    return sheetData("962930")
       .then((res) => {
         wrapper.update();
         // console.log(wrapper.debug());
