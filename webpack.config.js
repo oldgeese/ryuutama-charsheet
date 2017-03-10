@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)$/,
-        use: 'file-loader?name=./images/[name].[ext]',
+        use: 'file-loader?name=images/[name].[ext]',
       }
     ]
   },
