@@ -63,19 +63,16 @@ class Input extends React.Component {
     document.title = "りゅうたまキャラシート";
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <div className="header">
+          <h1>りゅうたまキャラシート Webアプリ ver 0.0.1</h1>
           <div>
-            キャラクターのIDを入力してください。
+            <a href="http://charasheet.vampire-blood.net/">キャラクター保管所</a>さんの
+            りゅうたまキャラデータをりゅうたま公式風のレイアウトに変換するアプリです。
+            <br/>
+            タグやタイトル、PC名で検索するか、キャラシートのIDを入力してください。
           </div>
-          <div>
-            <input type="text" size="60" name="charId"
-              value={this.state.charId} onChange={this.handleInputChange} />
-          </div>
-          <div>
-            <input type="submit" value="入力" />
-          </div>
-        </form>
-        <hr />
+          <hr/>
+        </div>
         <form onSubmit={this.handleSubmitSearch}>
           <div>
             検索：
@@ -90,6 +87,23 @@ class Input extends React.Component {
             <input type="submit" name="name" value="PC名検索" onClick={this.handleClickSearchButton}/>
           </div>
         </form>
+        <hr />
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            ID入力：
+          </div>
+          <div>
+            <input type="text" size="60" name="charId"
+              value={this.state.charId} onChange={this.handleInputChange} />
+          </div>
+          <div>
+            <input type="submit" value="入力" />
+          </div>
+        </form>
+        <div className="footer">
+          <hr/>
+          GitHub: <a href="https://github.com/oldgeese/ryuutama-charsheet">https://github.com/oldgeese/ryuutama-charsheet</a>
+        </div>
       </div>
     );
   }
