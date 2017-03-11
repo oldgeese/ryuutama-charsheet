@@ -1,8 +1,14 @@
+// @flow
 import React from 'react';
-import ReactDOM from 'react-dom';
-import CharSheet from './charsheet.jsx'
 
-ReactDOM.render(
-  <CharSheet />,
-  document.getElementById('root')
-);
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+export default App;

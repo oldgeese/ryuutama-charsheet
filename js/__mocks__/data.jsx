@@ -1,9 +1,7 @@
 
 import data from './962930-orig.json';
 
-const charId = "962930";
-
-export default function getSheetData(id=charId) {
+export function sheetData(id) {
   return new Promise((resolve, reject) => {
     process.nextTick(resolve({body:data}));
   });

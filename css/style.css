@@ -1,47 +1,38 @@
 @media print {
   .page {
     page-break-after: always;
-    width: 182mm;
-    height: 257mm;
   }
 
   .page:last-child {
     page-break-after: auto;
   }
-
-}
-
-html {
-  background-color: #EEE;
 }
 
 body {
   margin:0;
   font-size: 80%;
+  font-family: sans-serif;
 }
 
 div.container {
-  width: 84.065934066%;
-  height: 90.661478599%;
+  width: 153mm;
+  height: 233mm;
   margin-left:auto;
   margin-right:auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  padding-top: 5.7%;
 }
 
 div {
   box-sizing: border-box;
 }
 
-
 @page {
   size: B5 portrait;
+  margin: 0;
 }
 
 .page {
-  background-color: #FFF;
-  width: calc(182mm);
-  height: calc(257mm);
+  background-color: #FFFFFF;
 }
 
 .figure-area {
@@ -55,30 +46,56 @@ div {
 
 .title-area {
   display:inline-block;
-  width: 54%;
+  width: 55%;
   height: 100%;
-  vertical-align: baseline;
   padding-right: 20px;
 }
 
 .ryutama-title {
-  font-size: 300%;
+  font-size: 2.5rem;
+  text-align: center;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ryutama-title-english {
   font-style: italic;
   text-align: center;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.3em;
 }
 
 .traveler-character-sheet {
   border: 2px solid black;
   text-align: center;
   color: #FFFFFF;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
   text-shadow:
     black 1px 0px 0px,
     black 0px 1px 0px,
     black -1px 0px 0px,
-    black 0px -1px 0px;
+    black 0px -1px 0px,
+    black 1px 1px 0px,
+    black -1px 1px 0px,
+    black 1px -1px 0px,
+    black -1px -1px 0px;
+}
+
+.chrome {
+  color: #000000;
+  text-shadow: none;
 }
 
 .ryutama-header {
@@ -86,12 +103,11 @@ div {
 }
 
 .table {
-  border-radius: 10px;
+  border-radius: 2mm;
   border: 2px solid #000000;
   overflow: hidden;
   border-collapse: separate;
   width: 100%;
-  margin-top: 5px;
 }
 
 .row {
@@ -103,41 +119,64 @@ div {
   display: table-cell;
   border-left: 1px solid #000000;
   border-top: 1px solid #000000;
+  height: 100%;
 }
 
 .cell:first-child {
   border-left: none;
 }
 
-.row:first-child .cell {
+.row:first-child > .cell {
   border-top: none;
 }
 
 .label {
   background: #CCCCCC;
   text-align: center;
+  font-size: 80%;
+  vertical-align: middle;
 }
 
 .data {
   padding-left: 1%;
   padding-right: 1%;
+  vertical-align: middle;
+}
+
+.datagroup {
+  vertical-align: middle;
 }
 
 .table.ryujin_name,.table.created_date {
   display:inline-block;
-  width: 47%;
+  width: 48%;
+  height: 11.5%;
+  margin-top: 4%;
 }
 
 .table.ryujin_name {
-  margin-right: 5px;
+  margin-right: 1.8%;
 }
 
 .table.created_date {
-  margin-left: 5px;
+  margin-left: 1.8%;
 }
 
 .label.ryujin_name,.label.created_date {
   width: 46%;
+}
+
+.cell.ryujin_name,.cell.created_date {
+  height: 9.8%;
+}
+
+.table.character {
+  height: 11.6%;
+  margin-top: 1.3%
+}
+
+.table.character>.row {
+  height: 35%;
 }
 
 .pc_name.label, .V_level.label, .class_name.label {
@@ -145,14 +184,15 @@ div {
 }
 
 .pc_name.data {
-  width: 46.7%;
+  width: 47%;
 }
 
 .pl_name.label {
-  width: 18.1%;
+  width: 19%;
 }
 
 .pl_name.data {
+  width: 19%
 }
 
 .V_level.label {
@@ -163,7 +203,7 @@ div {
 }
 
 .exp_his_sum.label, .sex.label, .type_id.label {
-  width: 9.8%;
+  width: 10%;
 }
 
 .exp_his_sum.data {
@@ -174,7 +214,7 @@ div {
 }
 
 .sex.data {
-  width: 9.1%;
+  width: 10%;
 }
 
 .age.label {
@@ -182,48 +222,85 @@ div {
 }
 
 .age.data {
+  width: 19%;
 }
 
 .class_name.label {
 }
 
 .class_name.datagroup {
-  width: 36.8%;
+  width: 37%;
 }
 
 .type_id.label {
 }
 
 .type_id.datagroup {
+  width: 38%;
+}
+
+.table.class {
+  height: 27%;
+  margin-top: 1.3%
+}
+
+.table.class>.row {
+  height: 14.4%;
 }
 
 .label.class-ability {
-  width: 29.4%;
+  width: 29%;
 }
 
 .label.class-check-ability {
-  width: 22.8%;
+  width: 23%;
 }
 
 .label.class-effect {
-
+  width: 48%;
 }
 
 .data.class-ability-entry {
-  width: 29.4%;
+  width: 29%;
 }
 
 .data.class-check-ability-entry {
-  width: 22.8%;
+  width: 23%;
 }
 
-div.class-entry:nth-child(5) .cell {
-  border-top-style: double;
-  border-top-width: 3px;
+.table.class>.row.class-entry-spacer {
+  height:2px;
 }
+
+.data.class-entry-spacer-cell {
+  width: 100%;
+}
+
 
 .data.class-effect-entry {
   font-size: 80%;
+  width: 48%;
+}
+
+.table.feature {
+  height: 36%;
+  margin-top: 1.3%
+}
+
+.table.feature>.row {
+  height: 10%;
+}
+
+.table.feature>.row.feature-color-appearance {
+  height: 30%;
+}
+
+.table.feature>.row.feature-homeland-reason {
+  height: 30%;
+}
+
+.table.feature>.row.feature-memo {
+  height: 30%;
 }
 
 .label.feature-proficienty-weapon {
@@ -235,8 +312,8 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .label.feature-weather {
-  width: 9.8%;
-  font-size: 50%;
+  width: 10%;
+  font-size: 60%;
   vertical-align: middle;
 }
 
@@ -245,6 +322,388 @@ div.class-entry:nth-child(5) .cell {
 }
 
 .label.feature-favorite-item {
-  width: 18.9%;
+  width: 19%;
   font-size: 80%;
+}
+
+.data.feature-favorite-item {
+  width: 30%;
+}
+
+.data.feature-color-appearance {
+  vertical-align: baseline;
+}
+
+.data.feature-homeland-reason {
+  vertical-align: baseline;
+}
+
+.data.feature-memo {
+  vertical-align: baseline;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.reverse-color {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.small {
+  font-size: 0.6rem;
+}
+
+.line-height-small {
+  line-height: 0.6rem;
+}
+
+.vertical {
+  /* -webkit-writing-mode: vertical-rl; */
+  /* -ms-writing-mode: tb-rl; */
+  /* writing-mode: vertical-rl; */
+  /* -webkit-text-orientation: sideways; */
+  /* text-orientation: sideways; */
+  /* display: inline-block; */
+  /* transform: rotate(-90deg); */
+  /* width: 10px; */
+}
+
+.left-top-tip {
+  font-size: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.table.check {
+  height: 29.5%;
+}
+
+.table.check>.row.check-ability {
+  height: 36%;
+}
+
+.table.check>.row.check-hp-mp {
+  height: 24.5%;
+}
+
+.table.check>.row.check-condition {
+  height: 24.5%;
+}
+
+.table.check>.row.check-travel-initiative {
+  height: 16%;
+}
+
+.label.check-ability, .label.check-hp, .label.check-mp, .label.check-condition {
+  width: 6%;
+}
+
+.data.check-ability-str, .data.check-ability-dex, .data.check-ability-int, .data.check-ability-spi {
+  font-size: 1.2rem;
+  width: 9%;
+}
+
+.data.check-ability-image {
+  width: 14.5%;
+  border-left: 0;
+}
+
+div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-image-int, div.check-ability-image-spi {
+  border-radius: 12%;
+  background-color: #CCCCCC;
+  width: 82.6%;
+  height: 76%;
+}
+
+.data.check-hp, .data.check-mp {
+  width: 44%;
+}
+
+.data.check-hp>.row.check-hp-formula, .data.check-mp>.row.check-mp-formula, .data.check-condition>.row.check-condition-formula, .data.check-fumble>.row.check-fumble-label {
+  height: 35%;
+}
+
+.check-hp>.row.check-hp-value, .check-mp>.row.check-mp-value, .check-condition>.row.check-condition-value, .check-fumble>.row.check-fumble-value {
+  height: 65%;
+}
+
+.data.check-hp-value, .data.check-mp-value {
+  font-size: 1.1rem;
+}
+
+.data.check-condition-value {
+  letter-spacing: 0.04em;
+}
+
+.hp-mp-mark img,
+.condition-mark img,
+.fumble-mark img,
+.equipment-mark img,
+.badstatus-mark img {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+}
+
+.data.check-condition {
+  width: 70.5%;
+}
+
+.data.check-fumble {
+  width: 23.5%;
+}
+
+.condition-mark {
+}
+
+.check-fumble-label>.label {
+  height: 100%;
+}
+
+.fumble-mark {
+}
+
+.data.check-travel {
+  width: 76.7%;
+  line-height: 1rem;
+}
+
+.label.check-initiative {
+  width: 15%;
+}
+
+div.equipment {
+  height: 31.5%;
+}
+
+div.equipment-header {
+  height: 13.7%;
+}
+
+.table.equipment {
+  height: 86.3%;
+}
+
+.table.equipment>.row {
+  height: 34%;
+}
+
+.table.equipment>.row .row {
+  height: 50%;
+}
+
+div.equipment-header, div.modifier-header, div.badstatus-header {
+  font-size: 1.1rem;
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.label.weapon, .label.armor, .label.clothing {
+  width: 6%;
+}
+
+.data.weapon-name, .data.armor-name, .data.clothing-name1, .data.clothing-effect1, .data.clothing-name2, .data.clothing-effect2 {
+  width: 23.6%;
+}
+
+.data.weapon-hit, .data.armor-defense {
+  width: 15%;
+}
+
+.data.weapon-damage, .data.armor-penalty {
+  width: 15%;
+}
+
+.data.weapon-constitution, .data.armor-constitution {
+  width: 7.5%;
+}
+
+.data.weapon-effect, .data.armor-effect {
+  width: 33%;
+}
+
+.data.clothing-effect1, .data.clothing-effect2 {
+  font-size: 80%;
+}
+
+div.modifier {
+  height: 22.2%;
+}
+
+div.modifier-header {
+  height: 20%;
+}
+
+.table.modifier {
+  height: 80%;
+}
+
+.table.modifier>.row.modifier-label-row {
+  height: 33.4%;
+
+}
+
+.table.modifier>.row.modifier-value-row {
+  height: 16.9%;
+}
+
+.table.modifier>.row.modifier-label-row .row {
+  height: 51%;
+}
+
+.table.modifier>.row.modifier-value-row .row{
+  height: 100%;
+}
+
+.label.modifier-bonus-label, .label.modifier-penalty-label, .data.modifier-bonus-label-values, .data.modifier-penalty-label-values {
+  width: 14.5%;
+}
+
+.data.modifier-bonus-lv1, .data.modifier-bonus-lv1-values {
+  width: 15.6%;
+}
+
+.data.modifier-bonus-lv1>.row:last-child>.data {
+  width: 50%;
+}
+
+.data.modifier-bonus-lv1-values>.row>.data {
+  width: 50%;
+}
+
+.data.modifier-bonus-lv2, .data.modifier-bonus-lv2-values {
+  width: 23.4%;
+}
+
+.data.modifier-bonus-lv2>.row:last-child>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv2-values>.row>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv3, .data.modifier-bonus-lv3-values {
+  width: 23.4%;
+}
+
+.data.modifier-bonus-lv3>.row:last-child>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv3-values>.row>.data {
+  width: 33.3%;
+}
+
+.data.modifier-bonus-lv4, .data.modifier-bonus-lv4-values {
+  width: 15.6%;
+}
+
+.data.modifier-bonus-lv4>.row:last-child>.data{
+  width: 50%;
+}
+
+.data.modifier-bonus-lv4-values>.row>.data {
+  width: 50%;
+}
+
+.data.modifier-bonus-lv5, .data.modifier-bonus-lv5-values {
+  width: 7.7%;
+}
+
+.data.modifier-bonus-lv5>.row:last-child>.data{
+  width: 100%;
+}
+
+.data.modifier-bonus-lv5-values>.row>.data {
+  width: 100%;
+}
+
+.data.modifier-penalty-plus1, .data.modifier-penalty-plus1-values {
+  width: 39.0%;
+}
+
+.data.modifier-penalty-plus1>.row:last-child>.data{
+  width: 20%;
+}
+
+.data.modifier-penalty-plus1-values>.row>.data {
+  width: 20%;
+}
+
+.data.modifier-penalty-plus3, .data.modifier-penalty-plus3-values {
+  width: 31.2%;
+}
+
+.data.modifier-penalty-plus3>.row:last-child>.data{
+  width: 25%;
+}
+
+.data.modifier-penalty-plus3-values>.row>.data {
+  width: 25%;
+}
+
+.data.modifier-penalty-plus5, .data.modifier-penalty-plus5-values {
+  width: 15.5%;
+}
+
+.data.modifier-penalty-plus5>.row:last-child>.data{
+  width: 50%;
+}
+
+.data.modifier-penalty-plus5-values>.row>.data {
+  width: 50%;
+}
+
+div.badstatus {
+  height: 15.5%;
+}
+
+div.badstatus-header {
+  height: 30%;
+}
+
+.table.badstatus {
+  height: 70%;
+}
+
+.table.badstatus>.row {
+  height: 50%;
+}
+
+.label.badstatus-physical, .label.badstatus-mental {
+  width: 6%;
+}
+
+.data.badstatus-injury-label, .data.badstatus-tired-label,
+.data.badstatus-poison-label, .data.badstatus-muddled-label,
+.data.badstatus-sick-label, .data.badstatus-shock-label {
+  width: 22.5%;
+}
+
+.data.badstatus-injury-value, .data.badstatus-tired-value,
+.data.badstatus-poison-value, .data.badstatus-muddled-value,
+.data.badstatus-sick-value, .data.badstatus-shock-value {
+  width: 8.5%;
+}
+
+.badstatus-mark, .badstatus-explanation {
+  display:inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.5rem;
 }

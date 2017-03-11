@@ -5,16 +5,15 @@ compile:
   override:
     - npm run build
   post:
-    - mkdir netlify
-    - cp -a dist netlify/
-    - cp -a css netlify/
-    - cp react.html netlify/index.html
+    - mkdir -p netlify
+    - cp -a public/* netlify/
 general:
   branches:
     only:
       - master
+      - develop
 deployment:
   staging:
-    branch: master
+    branch: [master, develop, /feature.*/]
     commands:
       - ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
