@@ -1,5 +1,9 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+
+// 環境情報から状態を判定
+var PROD = (process.env.NODE_ENV === 'production');
 
 module.exports = {
   entry: "./js/index.jsx",
@@ -27,7 +31,21 @@ module.exports = {
       }
     ]
   },
-  plugins: [
+  plugins: PROD ? [
+    new ExtractTextPlugin('style.css'),
+    new webpack.optimize.UglifyJsPlugin({
+      beautify: false,
+      compress: {
+        warnings: false,
+        screw_ie8: true
+      },
+      comments: false,
+      sourceMap: true
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
+  ] : [
     new ExtractTextPlugin('style.css'),
   ],
   devServer: {
@@ -40,5 +58,5 @@ module.exports = {
       ]
     }
   },
-  devtool: 'inline-source-map'
+  devtool: PROD ? 'source-map' : 'inline-source-map'
 };
