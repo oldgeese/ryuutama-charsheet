@@ -5,18 +5,21 @@ import App from './app.jsx';
 import Input from './input.jsx';
 import CharSheet from './charsheet.jsx';
 import Search from './search.jsx';
-import { Router, Route, IndexRedirect, browserHistory } from 'react-router'
+import { BrowserRouter as Router, Route, Redirect, Switch, withRouter} from 'react-router-dom'
 
-ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRedirect to="/input" />
-      <Route path="input" component={Input} />
-      <Route path="char/:charId" component={CharSheet} />
-      <Route path="search/:mode/:searchString" component={Search} />
-      <Route path="*" component={Input} />
-    </Route>
+const InputWithRouter = withRouter(Input);
+
+ReactDOM.render(
+  <Router>
+    <App>
+      <Switch>
+        <Route path="/input" component={InputWithRouter} />
+        <Route path="/char/:charId" component={CharSheet} />
+        <Route path="/search/:mode/:searchString" component={Search} />
+        <Redirect from="*"to="/input" />
+      </Switch>
+    </App>
   </Router>
-  ),
+  ,
   document.getElementById('root')
 );

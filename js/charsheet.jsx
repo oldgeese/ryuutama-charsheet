@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import {sheetData} from './data.jsx';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import css from '../css/style.css';
 import bowser from 'bowser';
 import image_condition from '../images/condition.png';
@@ -831,8 +831,9 @@ class CharSheet extends React.Component {
   }
   componentDidMount() {
     let charId = this.state.charId;
-    if (this.props.params) {
-      charId = this.props.params.charId;
+    const params = this.props.match.params;
+    if (params) {
+      charId = params.charId;
     } else {
       charId = this.props.charId;
     }
@@ -841,10 +842,11 @@ class CharSheet extends React.Component {
   }
   componentWillReceiveProps(nextProps: CharSheetProps) {
     let charId = this.state.charId;
+    const params = nextProps.match.params;
     if (nextProps.charId) {
       charId = nextProps.charId;
-    } else if (nextProps.params) {
-      charId = nextProps.params.charId;
+    } else if (params) {
+      charId = params.charId;
     }
 
     if (charId === this.state.charId) {

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import {search} from './data.jsx';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import css from '../css/style.css';
 
 type SearchResultJson = Array<SearchResult>;
@@ -48,17 +48,19 @@ class Search extends React.Component {
     });
   }
   componentDidMount() {
-    this.setState({param: this.props.params});
-    const mode: string = this.props.params.mode;
-    const searchString: string = this.props.params.searchString;
+    const params = this.props.match.params;
+    this.setState({param: params});
+    const mode: string = params.mode;
+    const searchString: string = params.searchString;
     if (mode && searchString) {
       this.retrieveSearchResult(mode, searchString);
     }
   }
   componentWillReceiveProps(nextProps: Props) {
-    this.setState({param: nextProps.params});
-    const mode: string = nextProps.params.mode;
-    const searchString: string = nextProps.params.searchString;
+    const params = nextProps.match.params;
+    this.setState({param: params});
+    const mode: string = params.mode;
+    const searchString: string = params.searchString;
     if (mode && searchString) {
       this.retrieveSearchResult(mode, searchString);
     }

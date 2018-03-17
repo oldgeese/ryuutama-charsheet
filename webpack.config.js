@@ -33,15 +33,6 @@ module.exports = {
   },
   plugins: PROD ? [
     new ExtractTextPlugin('style.css'),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      compress: {
-        warnings: false,
-        screw_ie8: true
-      },
-      comments: false,
-      sourceMap: true
-    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })
@@ -49,6 +40,11 @@ module.exports = {
     new ExtractTextPlugin('style.css'),
   ],
   devServer: {
+    contentBase: [
+      path.join(__dirname, "public"),
+      path.join(__dirname, "node_modules/react/umd/"),
+      path.join(__dirname, "node_modules/react-dom/umd/"),
+    ],
     historyApiFallback: {
       rewrites: [
         {
@@ -58,5 +54,9 @@ module.exports = {
       ]
     }
   },
-  devtool: PROD ? 'source-map' : 'inline-source-map'
+  devtool: PROD ? 'source-map' : 'inline-source-map',
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  },
 };
