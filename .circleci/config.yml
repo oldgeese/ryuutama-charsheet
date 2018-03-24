@@ -5,6 +5,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - run: npm install
       - run: npm run build
       - run: mkdir -p netlify
       - run: cp -a public/* netlify/
@@ -19,6 +20,7 @@ jobs:
     docker: 
       - image: circleci/node:latest
     steps:
+      - checkout
       - deploy: ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
 workflows:
   version: 2
