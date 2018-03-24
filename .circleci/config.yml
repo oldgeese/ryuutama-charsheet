@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    steps:
+      - checkout
+      - run: npm run build
+      - run: mkdir -p netlify
+      - run: cp -a public/* netlify/
+      - run: mv -f netlify/index.production.html netlify/index.html
+  test:
+    steps:
+      - checkout
+      - run: npm run test
+  deploy:
+    steps:
+      - deploy: ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
