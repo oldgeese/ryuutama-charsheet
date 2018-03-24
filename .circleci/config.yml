@@ -1,6 +1,8 @@
 version: 2
 jobs:
   build:
+    docker: 
+      - image: circleci/node:latest
     steps:
       - checkout
       - run: npm run build
@@ -8,10 +10,14 @@ jobs:
       - run: cp -a public/* netlify/
       - run: mv -f netlify/index.production.html netlify/index.html
   test:
+    docker: 
+      - image: circleci/node:latest
     steps:
       - checkout
       - run: npm run test
   deploy:
+    docker: 
+      - image: circleci/node:latest
     steps:
       - deploy: ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
 workflows:
