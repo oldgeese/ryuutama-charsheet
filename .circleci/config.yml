@@ -33,7 +33,7 @@ jobs:
       - run: npm run test
   deploy:
     docker: 
-      - image: circleci/node:latest
+      - image: circleci/node:9
     working_directory: ~/workflows
     steps:
       - restore_cache:
