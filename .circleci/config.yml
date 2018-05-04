@@ -37,6 +37,8 @@ jobs:
     steps:
       - restore_cache:
           key: repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: modules-{{ checksum "package.json" }}
       - deploy: 
           name: Deploy to netlify
           command: ./node_modules/.bin/netlify deploy -p netlify -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN
