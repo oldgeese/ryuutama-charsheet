@@ -108,11 +108,13 @@ div {
   overflow: hidden;
   border-collapse: separate;
   width: 100%;
+  height: 100%;
 }
 
 .row {
   display: table;
   width: 100%;
+  height: 100%;
 }
 
 .cell {
@@ -503,7 +505,8 @@ div.equipment-header {
   height: 50%;
 }
 
-div.equipment-header, div.modifier-header, div.badstatus-header {
+div.equipment-header, div.modifier-header, div.badstatus-header,
+div.items-header {
   font-size: 1.1rem;
   display: table-cell;
   vertical-align: baseline;
@@ -707,3 +710,70 @@ div.badstatus-header {
 .copyright {
   font-size: 0.5rem;
 }
+
+div.char-and-plname {
+  display: flex;
+  justify-content: flex-end;
+  height: 3.9%;
+}
+
+.char-and-plname .table {
+  width: 50%;
+}
+
+.char-and-plname .cell.char-name, .char-and-plname .cell.pl-name {
+  width: 50%;
+}
+
+.char-and-plname .cell.char-name .left-top-tip {
+  margin-left: 5px;
+}
+
+div.possessions {
+  height: 6%;
+  margin-top: 1.3%;
+}
+
+div.possessions .table .row.label-row {
+  height: 40%;
+}
+
+div.possessions .table .row.label-row .cell {
+  width: 33.3%;
+}
+
+div.possessions .table .row.data-row {
+  height: 60%;
+}
+
+div.possessions .table .row.data-row .cell {
+  width: 33.3%;
+}
+
+div.items {
+  height: 90%;
+  margin-top: 1.3%;
+}
+
+.items .table .row {
+  height: unset;
+}
+
+.items .table .row .cell.item-name {
+  width: 25%;
+}
+
+.items .table .row .cell.item-price {
+  width: 15%;
+}
+
+.items .table .row .cell.item-weight {
+  width: 10%;
+}
+
+.items .table .row .cell.item-memo {
+  width: 50%;
+}
+
+
+

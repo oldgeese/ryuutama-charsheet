@@ -60,3 +60,5 @@ public/*.map
 public/images
 public/images/*
 */bundle.js
+
+yarn.lock

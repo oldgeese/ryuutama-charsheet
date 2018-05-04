@@ -7,7 +7,7 @@ type State = {
   searchString: string
 };
 
-class Input extends React.Component {
+class Input extends React.Component<State> {
   state: State;
   handleInputChange: (event: Event)=>void;
   handleSubmit: (event: Event)=>void;
@@ -40,7 +40,7 @@ class Input extends React.Component {
     event.preventDefault();
     if (this.state.charId) {
       const path = "/char/" + this.state.charId;
-      this.context.router.push(path);
+      this.props.history.push(path);
     }
   }
   handleSubmitSearch(event: Event) {
@@ -49,7 +49,7 @@ class Input extends React.Component {
     if (event.target instanceof HTMLFormElement) {
       // const path: string= "/char/?" + this.state.mode + "=" + encodeURIComponent(this.state.searchString);
       const path: string= "/search/" + this.state.mode + "/" + encodeURIComponent(this.state.searchString);
-      this.context.router.push(path);
+      this.props.history.push(path);
     }
   }
   handleClickSearchButton(event: Event) {
@@ -107,10 +107,6 @@ class Input extends React.Component {
       </div>
     );
   }
-}
-
-Input.contextTypes = {
-    router: React.PropTypes.object
 }
 
 export default Input;
