@@ -2,11 +2,11 @@
 import request from 'superagent';
 import jsonp from 'superagent-jsonp';
 
-const baseUrl: string = "https://pure-anchorage-83238.herokuapp.com/";
+const baseUrl: string = "https://charasheet.vampire-blood.net/";
 const postfix: string = ".json"
 const timeout: number = 10000;
 const numIdLength: number = 7;
-const searchBaseUrl: string = "https://pure-anchorage-83238.herokuapp.com/list_ryutama.json";
+const searchBaseUrl: string = baseUrl + "list_ryutama.json";
 
 type QueryObject = {
   [mode: string]: string
