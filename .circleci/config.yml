@@ -34,6 +34,7 @@ jobs:
   deploy:
     docker: 
       - image: circleci/node:latest
+    working_directory: ~/workflows
     steps:
       - restore_cache:
           key: repo-{{ .Environment.CIRCLE_SHA1 }}
