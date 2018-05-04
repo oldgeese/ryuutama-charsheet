@@ -731,6 +731,85 @@ function Copyright() {
   );
 }
 
+function RyutamaCharAndPLName(props: {data: CharDataJson}) {
+  const d = props.data;
+  return (
+    <div className="char-and-plname">
+      <Ryutable>
+        <Ryurow>
+          <Ryudata className="char-name relative">
+            <div className="left-top-tip">キャラクター名</div>
+            {d.pc_name}
+          </Ryudata>
+          <Ryudata className="pl-name relative">
+            <div className="left-top-tip">プレイヤー名</div>
+            {d.pl_name}
+          </Ryudata>
+        </Ryurow>
+      </Ryutable>
+    </div>
+  );
+}
+
+function RyutamaPossessions(props: {data: CharDataJson}) {
+  const d = props.data;
+  return (
+    <div className="possessions">
+      <Ryutable>
+        <Ryurow className="label-row">
+          <Ryulabel>所持金</Ryulabel>
+          <Ryulabel>所持サイズ上限</Ryulabel>
+          <Ryulabel>所持サイズ</Ryulabel>
+        </Ryurow>
+        <Ryurow className="data-row">
+          <Ryudata>{d.money} G</Ryudata>
+          <Ryudata>【体力値】+3={d.weight_item_max}</Ryudata>
+          <Ryudata>合計={d.weight_item_sum}</Ryudata>
+        </Ryurow>
+    </Ryutable>
+    </div>
+  );
+}
+
+function RyutamaItems(props: {data: CharDataJson}) {
+  const d = props.data;
+  return (
+    <div className="items">
+      <div className="items-header">アイテムリスト</div>
+      <Ryutable>
+        <Ryurow>
+          <Ryulabel className="item-name">アイテム名称</Ryulabel>
+          <Ryulabel className="item-price">価格(G)</Ryulabel>
+          <Ryulabel className="item-weight">サイズ</Ryulabel>
+          <Ryulabel className="item-memo">効果・耐性・その他</Ryulabel>
+        </Ryurow>
+        {d.item_name.map((name, index) => (
+          <Ryurow>
+            <Ryudata className="item-name">{name}</Ryudata>
+            <Ryudata className="item-price">{ d.item_price[index] }</Ryudata>
+            <Ryudata className="item-weight">{ d.item_weight[index] }</Ryudata>
+            <Ryudata className="item-memo">{ d.item_memo[index] }</Ryudata>
+          </Ryurow>
+        ))}
+      </Ryutable>
+    </div>
+  );
+}
+
+function RyutamaMagics() {
+  return (
+    <div className="magics">
+    </div>
+  );
+}
+
+function RyutamaMemos() {
+  return (
+    <div className="memos">
+    </div>
+  );
+}
+
 class RyutamaSheet extends React.Component {
   static TYPE() {
     return {
@@ -787,6 +866,13 @@ class RyutamaSheet extends React.Component {
           <RyutamaModifier data={d} />
           <RyutamaBadStatus data={d} />
           <Copyright />
+        </div>
+      </div>
+      <div className="page">
+        <div className="container">
+          <RyutamaCharAndPLName data={d} />
+          <RyutamaPossessions data={d} />
+          <RyutamaItems data={d} />
         </div>
       </div>
       </div>
