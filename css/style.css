@@ -795,11 +795,11 @@ div.spells {
 }
 
 .spells .table .row .cell.spell-mp {
-  width: 5%;
+  width: 6%;
 }
 
 .spells .table .row .cell.spell-time {
-  width: 10%;
+  width: 15%;
 }
 
 .spells .table .row .cell.spell-taisho {
@@ -807,9 +807,9 @@ div.spells {
 }
 
 .spells .table .row .cell.spell-range {
-  width: 10%;
+  width: 14%;
 }
 
 .spells .table .row .cell.spell-memo {
-  width: 40%;
+  width: 30%;
 }

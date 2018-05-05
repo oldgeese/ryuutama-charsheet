@@ -784,6 +784,7 @@ function RyutamaItems(props: {data: CharDataJson}) {
           <Ryulabel className="item-memo">効果・耐性・その他</Ryulabel>
         </Ryurow>
         {d.item_name.map((name, index) => (
+          (name == "") ? false :
           <Ryurow>
             <Ryudata className="item-name">{name == "" ? <span>&nbsp;</span> : name}</Ryudata>
             <Ryudata className="item-price">{ d.item_price[index] }</Ryudata>
@@ -791,6 +792,12 @@ function RyutamaItems(props: {data: CharDataJson}) {
             <Ryudata className="item-memo">{ d.item_memo[index] }</Ryudata>
           </Ryurow>
         ))}
+        <Ryurow>
+          <Ryudata className="item-name"><span>&nbsp;</span></Ryudata>
+          <Ryudata className="item-price"></Ryudata>
+          <Ryudata className="item-weight"></Ryudata>
+          <Ryudata className="item-memo"></Ryudata>
+        </Ryurow>
       </Ryutable>
     </div>
   );
@@ -811,6 +818,7 @@ function RyutamaSpells(props:  {data: CharDataJson}) {
           <Ryulabel className="spell-memo">効果</Ryulabel>
         </Ryurow>
         {d.spell_name.map((name, index) => (
+          (name == "") ? false :
           <Ryurow>
             <Ryudata className="spell-name">{name == "" ? <span>&nbsp;</span> : name}</Ryudata>
             <Ryudata className="spell-mp">{ d.spell_mp[index] }</Ryudata>
@@ -820,6 +828,14 @@ function RyutamaSpells(props:  {data: CharDataJson}) {
             <Ryudata className="spell-memo">{ d.spell_memo[index] }</Ryudata>
           </Ryurow>
         ))}
+        <Ryurow>
+          <Ryudata className="spell-name"><span>&nbsp;</span></Ryudata>
+          <Ryudata className="spell-mp"></Ryudata>
+          <Ryudata className="spell-time"></Ryudata>
+          <Ryudata className="spell-taisho"></Ryudata>
+          <Ryudata className="spell-range"></Ryudata>
+          <Ryudata className="spell-memo"></Ryudata>
+        </Ryurow>
       </Ryutable>
     </div>
   );
