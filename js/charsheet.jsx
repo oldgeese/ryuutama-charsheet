@@ -796,9 +796,31 @@ function RyutamaItems(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaMagics() {
+function RyutamaSpells(props:  {data: CharDataJson}) {
+  const d = props.data;
   return (
-    <div className="magics">
+    <div className="spells">
+      <div className="spells-header">魔法リスト</div>
+      <Ryutable>
+        <Ryurow>
+          <Ryulabel className="spell-name">名称</Ryulabel>
+          <Ryulabel className="spell-mp">MP</Ryulabel>
+          <Ryulabel className="spell-time">効果時間</Ryulabel>
+          <Ryulabel className="spell-taisho">対象</Ryulabel>
+          <Ryulabel className="spell-range">射程</Ryulabel>
+          <Ryulabel className="spell-memo">効果</Ryulabel>
+        </Ryurow>
+        {d.spell_name.map((name, index) => (
+          <Ryurow>
+            <Ryudata className="spell-name">{name == "" ? <span>&nbsp;</span> : name}</Ryudata>
+            <Ryudata className="spell-mp">{ d.spell_mp[index] }</Ryudata>
+            <Ryudata className="spell-time">{ d.spell_time[index] }</Ryudata>
+            <Ryudata className="spell-taisho">{ d.spell_taisho[index] }</Ryudata>
+            <Ryudata className="spell-range">{ d.spell_range[index] }</Ryudata>
+            <Ryudata className="spell-memo">{ d.spell_memo[index] }</Ryudata>
+          </Ryurow>
+        ))}
+      </Ryutable>
     </div>
   );
 }
@@ -873,6 +895,7 @@ class RyutamaSheet extends React.Component {
           <RyutamaCharAndPLName data={d} />
           <RyutamaPossessions data={d} />
           <RyutamaItems data={d} />
+          <RyutamaSpells data={d} />
         </div>
       </div>
       </div>
