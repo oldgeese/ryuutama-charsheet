@@ -785,7 +785,7 @@ function RyutamaItems(props: {data: CharDataJson}) {
         </Ryurow>
         {d.item_name.map((name, index) => (
           <Ryurow>
-            <Ryudata className="item-name">{name}</Ryudata>
+            <Ryudata className="item-name">{name == "" ? <span>&nbsp;</span> : name}</Ryudata>
             <Ryudata className="item-price">{ d.item_price[index] }</Ryudata>
             <Ryudata className="item-weight">{ d.item_weight[index] }</Ryudata>
             <Ryudata className="item-memo">{ d.item_memo[index] }</Ryudata>

@@ -755,8 +755,12 @@ div.items {
   margin-top: 1.3%;
 }
 
+.items .table {
+  height: initial;
+}
+
 .items .table .row {
-  height: unset;
+  height: initial;
 }
 
 .items .table .row .cell.item-name {
