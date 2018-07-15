@@ -785,7 +785,7 @@ function RyutamaItems(props: {data: CharDataJson}) {
         </Ryurow>
         {d.item_name.map((name, index) => (
           (name == "") ? false :
-          <Ryurow>
+          <Ryurow key={index}>
             <Ryudata className="item-name">{name == "" ? <span>&nbsp;</span> : name}</Ryudata>
             <Ryudata className="item-price">{ d.item_price[index] }</Ryudata>
             <Ryudata className="item-weight">{ d.item_weight[index] }</Ryudata>
@@ -819,7 +819,7 @@ function RyutamaSpells(props:  {data: CharDataJson}) {
         </Ryurow>
         {d.spell_name.map((name, index) => (
           (name == "") ? false :
-          <Ryurow>
+          <Ryurow key={index}>
             <Ryudata className="spell-name">{name == "" ? <span>&nbsp;</span> : name}</Ryudata>
             <Ryudata className="spell-mp">{ d.spell_mp[index] }</Ryudata>
             <Ryudata className="spell-time">{ d.spell_time[index] }</Ryudata>
