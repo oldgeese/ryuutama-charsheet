@@ -62,7 +62,7 @@ class Input extends React.Component<State> {
   render() {
     document.title = "りゅうたまキャラシート";
     return (
-      <div>
+      <div className="container">
         <div className="header">
           <h1>りゅうたまキャラシート Webアプリ ver 0.0.1</h1>
           <div>
@@ -73,33 +73,31 @@ class Input extends React.Component<State> {
           </div>
           <hr/>
         </div>
+      <div>
         <form onSubmit={this.handleSubmitSearch}>
-          <div>
-            検索：
-          </div>
-          <div>
-            <input type="text" size="60" name="searchString"
+          <div className="form-group">
+            <label>検索</label>
+            <input className="form-control" type="text" size="60" name="searchString"
               value={this.state.searchString} onChange={this.handleInputChange} />
           </div>
-          <div>
-            <input type="submit" name="tag" value="タグ検索"  onClick={this.handleClickSearchButton}/>
-            <input type="submit" name="title" value="タイトル検索" onClick={this.handleClickSearchButton}/>
-            <input type="submit" name="name" value="PC名検索" onClick={this.handleClickSearchButton}/>
-          </div>
+          <input className="btn btn-primary" type="submit" name="tag" value="タグ検索"  onClick={this.handleClickSearchButton}/>
+          {' '}
+          <input className="btn btn-secondary" type="submit" name="title" value="タイトル検索" onClick={this.handleClickSearchButton}/>
+          {' '}
+          <input className="btn btn-secondary" type="submit" name="name" value="PC名検索" onClick={this.handleClickSearchButton}/>
         </form>
         <hr />
         <form onSubmit={this.handleSubmit}>
-          <div>
-            ID入力：
-          </div>
-          <div>
-            <input type="text" size="60" name="charId"
+          <div className="form-group">
+            <label>ID入力</label>
+            <input className="form-control" type="text" size="60" name="charId"
               value={this.state.charId} onChange={this.handleInputChange} />
           </div>
           <div>
-            <input type="submit" value="入力" />
+            <input className="btn btn-primary" type="submit" value="入力" />
           </div>
         </form>
+      </div>
         <div className="footer">
           <hr/>
           GitHub: <a href="https://github.com/oldgeese/ryuutama-charsheet">https://github.com/oldgeese/ryuutama-charsheet</a>
