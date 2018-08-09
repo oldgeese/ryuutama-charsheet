@@ -2,7 +2,6 @@
 import React from 'react';
 import {search} from './data.jsx';
 import {Link} from 'react-router-dom';
-import css from '../css/style.css';
 
 type SearchResultJson = Array<SearchResult>;
 type SearchResult = {
@@ -78,13 +77,25 @@ class Search extends React.Component {
       if (d != null) {
         document.title = "検索結果";
         return (
-          <div>
+          <div className="container">
+            <h1>検索結果</h1>
             <div>検索結果：{d.length}件</div>
-            <ul>
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">PC名</th>
+                </tr>
+              </thead>
+              <tbody>
               {d.map((d) => 
-                <li key={d.id}><Link to={"/char/"+d.id}>{d.id}</Link>, {d.title}</li>
+                <tr key={d.id}>
+                  <th scope="row"><Link to={"/char/"+d.id}>{d.id}</Link></th>
+                  <td>{d.title}</td>
+                </tr>
               )}
-            </ul>
+              </tbody>
+            </table>
           </div>
         )
       } else {

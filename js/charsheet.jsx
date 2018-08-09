@@ -2,7 +2,7 @@
 import React from 'react';
 import {sheetData} from './data.jsx';
 import {Link} from 'react-router-dom';
-import css from '../css/style.css';
+// import css from '../css/style.css';
 import bowser from 'bowser';
 import image_condition from '../images/condition.png';
 import image_fumble from '../images/fumble.png';
@@ -31,13 +31,13 @@ function joinIgnoreFalsy(list: Array<any>, separator: string=",") {
 
 function Ryutable(props: PropsWithChildren) {
   return (
-    <div className={"table " + (props.className || "")}>{props.children}</div>
+    <div className={"ryutable " + (props.className || "")}>{props.children}</div>
   );
 }
 
 function Ryurow(props: PropsWithChildren) {
   return (
-    <div className={"row " + (props.className || "")}>{props.children}</div>
+    <div className={"ryurow " + (props.className || "")}>{props.children}</div>
   );
 }
 
@@ -863,42 +863,42 @@ class RyutamaSheet extends React.Component {
     return (
       <div className="sheet">
       <div className="page">
-        <div className="container">
+        <div className="inner">
           <RyutamaHeader/>
-          <div className="table character">
-            <div className="row">
-              <div className="cell label pc_name">キャラクター名</div>
-              <div className="cell data pc_name">{d.pc_name}</div>
-              <div className="cell label pl_name">プレイヤー名</div>
-              <div className="cell data pl_name">{d.pl_name}</div>
-            </div>
-            <div className="row">
-              <div className="cell label V_level">LV</div>
-              <div className="cell data V_level">{d.V_level}</div>
-              <div className="cell label exp_his_sum">EXP</div>
-              <div className="cell data exp_his_sum">{d.exp_his_sum}</div>
-              <div className="cell label sex">性別</div>
-              <div className="cell data sex">{d.sex}</div>
-              <div className="cell label age">年齢</div>
-              <div className="cell data age">{d.age}</div>
-            </div>
-            <div className="row">
-              <div className="cell label class_name">クラス</div>
+          <Ryutable className="character">
+            <Ryurow>
+              <Ryulabel className="pc_name">キャラクター名</Ryulabel>
+              <Ryudata className="pc_name">{d.pc_name}</Ryudata>
+              <Ryulabel className="pl_name">プレイヤー名</Ryulabel>
+              <Ryudata className="pl_name">{d.pl_name}</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryulabel className="V_level">LV</Ryulabel>
+              <Ryudata className="V_level">{d.V_level}</Ryudata>
+              <Ryulabel className="exp_his_sum">EXP</Ryulabel>
+              <Ryudata className="exp_his_sum">{d.exp_his_sum}</Ryudata>
+              <Ryulabel className="sex">性別</Ryulabel>
+              <Ryudata className="sex">{d.sex}</Ryudata>
+              <Ryulabel className="age">年齢</Ryulabel>
+              <Ryudata className="age">{d.age}</Ryudata>
+            </Ryurow>
+            <Ryurow>
+              <Ryulabel className="class_name">クラス</Ryulabel>
               <div className="cell datagroup class_name">
                 <span className="data class_name">{d.class_name}</span>/<span className="data class2_name">{d.class2_name}</span>
               </div>
-              <div className="cell label type_id">タイプ</div>
+              <Ryulabel className="type_id">タイプ</Ryulabel>
               <div className="cell datagroup type_id">
                 <span className="data type_id">{RyutamaSheet.TYPE()[d.type_id]}</span>/<span className="data type2">{RyutamaSheet.TYPE()[d.type2]}</span>
               </div>
-            </div>
-          </div>
+            </Ryurow>
+          </Ryutable>
           <RyutamaClass data={d} />
           <RyutamaFeature data={d} />
         </div>
       </div>
       <div className="page">
-        <div className="container">
+        <div className="inner">
           <RyutamaCheck data={d} />
           <RyutamaEquipment data={d} />
           <RyutamaModifier data={d} />
@@ -907,7 +907,7 @@ class RyutamaSheet extends React.Component {
         </div>
       </div>
       <div className="page">
-        <div className="container">
+        <div className="inner">
           <RyutamaCharAndPLName data={d} />
           <RyutamaPossessions data={d} />
           <RyutamaItems data={d} />

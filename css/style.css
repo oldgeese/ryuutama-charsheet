@@ -14,7 +14,7 @@ body {
   font-family: sans-serif;
 }
 
-div.container {
+.page .inner {
   width: 153mm;
   height: 233mm;
   margin-left:auto;
@@ -102,7 +102,7 @@ div {
   height: 21.888412017%;
 }
 
-.table {
+.ryutable {
   border-radius: 2mm;
   border: 2px solid #000000;
   overflow: hidden;
@@ -111,7 +111,7 @@ div {
   height: 100%;
 }
 
-.row {
+.ryurow {
   display: table;
   width: 100%;
   height: 100%;
@@ -128,7 +128,7 @@ div {
   border-left: none;
 }
 
-.row:first-child > .cell {
+.ryurow:first-child > .cell {
   border-top: none;
 }
 
@@ -149,18 +149,18 @@ div {
   vertical-align: middle;
 }
 
-.table.ryujin_name,.table.created_date {
+.ryutable.ryujin_name,.ryutable.created_date {
   display:inline-block;
   width: 48%;
   height: 11.5%;
   margin-top: 4%;
 }
 
-.table.ryujin_name {
+.ryutable.ryujin_name {
   margin-right: 1.8%;
 }
 
-.table.created_date {
+.ryutable.created_date {
   margin-left: 1.8%;
 }
 
@@ -172,12 +172,12 @@ div {
   height: 9.8%;
 }
 
-.table.character {
+.ryutable.character {
   height: 11.6%;
   margin-top: 1.3%
 }
 
-.table.character>.row {
+.ryutable.character>.ryurow {
   height: 35%;
 }
 
@@ -241,12 +241,12 @@ div {
   width: 38%;
 }
 
-.table.class {
+.ryutable.class {
   height: 27%;
   margin-top: 1.3%
 }
 
-.table.class>.row {
+.ryutable.class>.ryurow {
   height: 14.4%;
 }
 
@@ -270,7 +270,7 @@ div {
   width: 23%;
 }
 
-.table.class>.row.class-entry-spacer {
+.ryutable.class>.ryurow.class-entry-spacer {
   height:2px;
 }
 
@@ -284,24 +284,24 @@ div {
   width: 48%;
 }
 
-.table.feature {
+.ryutable.feature {
   height: 36%;
   margin-top: 1.3%
 }
 
-.table.feature>.row {
+.ryutable.feature>.ryurow {
   height: 10%;
 }
 
-.table.feature>.row.feature-color-appearance {
+.ryutable.feature>.ryurow.feature-color-appearance {
   height: 30%;
 }
 
-.table.feature>.row.feature-homeland-reason {
+.ryutable.feature>.ryurow.feature-homeland-reason {
   height: 30%;
 }
 
-.table.feature>.row.feature-memo {
+.ryutable.feature>.ryurow.feature-memo {
   height: 30%;
 }
 
@@ -387,23 +387,23 @@ div {
   position: relative;
 }
 
-.table.check {
+.ryutable.check {
   height: 29.5%;
 }
 
-.table.check>.row.check-ability {
+.ryutable.check>.ryurow.check-ability {
   height: 36%;
 }
 
-.table.check>.row.check-hp-mp {
+.ryutable.check>.ryurow.check-hp-mp {
   height: 24.5%;
 }
 
-.table.check>.row.check-condition {
+.ryutable.check>.ryurow.check-condition {
   height: 24.5%;
 }
 
-.table.check>.row.check-travel-initiative {
+.ryutable.check>.ryurow.check-travel-initiative {
   height: 16%;
 }
 
@@ -432,11 +432,11 @@ div.check-ability-image-str, div.check-ability-image-dex, div.check-ability-imag
   width: 44%;
 }
 
-.data.check-hp>.row.check-hp-formula, .data.check-mp>.row.check-mp-formula, .data.check-condition>.row.check-condition-formula, .data.check-fumble>.row.check-fumble-label {
+.data.check-hp>.ryurow.check-hp-formula, .data.check-mp>.ryurow.check-mp-formula, .data.check-condition>.ryurow.check-condition-formula, .data.check-fumble>.ryurow.check-fumble-label {
   height: 35%;
 }
 
-.check-hp>.row.check-hp-value, .check-mp>.row.check-mp-value, .check-condition>.row.check-condition-value, .check-fumble>.row.check-fumble-value {
+.check-hp>.ryurow.check-hp-value, .check-mp>.ryurow.check-mp-value, .check-condition>.ryurow.check-condition-value, .check-fumble>.ryurow.check-fumble-value {
   height: 65%;
 }
 
@@ -493,15 +493,15 @@ div.equipment-header {
   height: 13.7%;
 }
 
-.table.equipment {
+.ryutable.equipment {
   height: 86.3%;
 }
 
-.table.equipment>.row {
+.ryutable.equipment>.ryurow {
   height: 34%;
 }
 
-.table.equipment>.row .row {
+.ryutable.equipment>.ryurow .ryurow {
   height: 50%;
 }
 
@@ -548,24 +548,24 @@ div.modifier-header {
   height: 20%;
 }
 
-.table.modifier {
+.ryutable.modifier {
   height: 80%;
 }
 
-.table.modifier>.row.modifier-label-row {
+.ryutable.modifier>.ryurow.modifier-label-row {
   height: 33.4%;
 
 }
 
-.table.modifier>.row.modifier-value-row {
+.ryutable.modifier>.ryurow.modifier-value-row {
   height: 16.9%;
 }
 
-.table.modifier>.row.modifier-label-row .row {
+.ryutable.modifier>.ryurow.modifier-label-row .ryurow {
   height: 51%;
 }
 
-.table.modifier>.row.modifier-value-row .row{
+.ryutable.modifier>.ryurow.modifier-value-row .ryurow{
   height: 100%;
 }
 
@@ -577,11 +577,11 @@ div.modifier-header {
   width: 15.6%;
 }
 
-.data.modifier-bonus-lv1>.row:last-child>.data {
+.data.modifier-bonus-lv1>.ryurow:last-child>.data {
   width: 50%;
 }
 
-.data.modifier-bonus-lv1-values>.row>.data {
+.data.modifier-bonus-lv1-values>.ryurow>.data {
   width: 50%;
 }
 
@@ -589,11 +589,11 @@ div.modifier-header {
   width: 23.4%;
 }
 
-.data.modifier-bonus-lv2>.row:last-child>.data {
+.data.modifier-bonus-lv2>.ryurow:last-child>.data {
   width: 33.3%;
 }
 
-.data.modifier-bonus-lv2-values>.row>.data {
+.data.modifier-bonus-lv2-values>.ryurow>.data {
   width: 33.3%;
 }
 
@@ -601,11 +601,11 @@ div.modifier-header {
   width: 23.4%;
 }
 
-.data.modifier-bonus-lv3>.row:last-child>.data {
+.data.modifier-bonus-lv3>.ryurow:last-child>.data {
   width: 33.3%;
 }
 
-.data.modifier-bonus-lv3-values>.row>.data {
+.data.modifier-bonus-lv3-values>.ryurow>.data {
   width: 33.3%;
 }
 
@@ -613,11 +613,11 @@ div.modifier-header {
   width: 15.6%;
 }
 
-.data.modifier-bonus-lv4>.row:last-child>.data{
+.data.modifier-bonus-lv4>.ryurow:last-child>.data{
   width: 50%;
 }
 
-.data.modifier-bonus-lv4-values>.row>.data {
+.data.modifier-bonus-lv4-values>.ryurow>.data {
   width: 50%;
 }
 
@@ -625,11 +625,11 @@ div.modifier-header {
   width: 7.7%;
 }
 
-.data.modifier-bonus-lv5>.row:last-child>.data{
+.data.modifier-bonus-lv5>.ryurow:last-child>.data{
   width: 100%;
 }
 
-.data.modifier-bonus-lv5-values>.row>.data {
+.data.modifier-bonus-lv5-values>.ryurow>.data {
   width: 100%;
 }
 
@@ -637,11 +637,11 @@ div.modifier-header {
   width: 39.0%;
 }
 
-.data.modifier-penalty-plus1>.row:last-child>.data{
+.data.modifier-penalty-plus1>.ryurow:last-child>.data{
   width: 20%;
 }
 
-.data.modifier-penalty-plus1-values>.row>.data {
+.data.modifier-penalty-plus1-values>.ryurow>.data {
   width: 20%;
 }
 
@@ -649,11 +649,11 @@ div.modifier-header {
   width: 31.2%;
 }
 
-.data.modifier-penalty-plus3>.row:last-child>.data{
+.data.modifier-penalty-plus3>.ryurow:last-child>.data{
   width: 25%;
 }
 
-.data.modifier-penalty-plus3-values>.row>.data {
+.data.modifier-penalty-plus3-values>.ryurow>.data {
   width: 25%;
 }
 
@@ -661,11 +661,11 @@ div.modifier-header {
   width: 15.5%;
 }
 
-.data.modifier-penalty-plus5>.row:last-child>.data{
+.data.modifier-penalty-plus5>.ryurow:last-child>.data{
   width: 50%;
 }
 
-.data.modifier-penalty-plus5-values>.row>.data {
+.data.modifier-penalty-plus5-values>.ryurow>.data {
   width: 50%;
 }
 
@@ -677,11 +677,11 @@ div.badstatus-header {
   height: 30%;
 }
 
-.table.badstatus {
+.ryutable.badstatus {
   height: 70%;
 }
 
-.table.badstatus>.row {
+.ryutable.badstatus>.ryurow {
   height: 50%;
 }
 
@@ -717,7 +717,7 @@ div.char-and-plname {
   height: 3.9%;
 }
 
-.char-and-plname .table {
+.char-and-plname .ryutable {
   width: 50%;
 }
 
@@ -734,19 +734,19 @@ div.possessions {
   margin-top: 1.3%;
 }
 
-div.possessions .table .row.label-row {
+div.possessions .ryutable .ryurow.label-row {
   height: 40%;
 }
 
-div.possessions .table .row.label-row .cell {
+div.possessions .ryutable .ryurow.label-row .cell {
   width: 33.3%;
 }
 
-div.possessions .table .row.data-row {
+div.possessions .ryutable .ryurow.data-row {
   height: 60%;
 }
 
-div.possessions .table .row.data-row .cell {
+div.possessions .ryutable .ryurow.data-row .cell {
   width: 33.3%;
 }
 
@@ -754,27 +754,27 @@ div.items {
   margin-top: 1.3%;
 }
 
-.items .table {
+.items .ryutable {
   height: initial;
 }
 
-.items .table .row {
+.items .ryutable .ryurow {
   height: initial;
 }
 
-.items .table .row .cell.item-name {
+.items .ryutable .ryurow .cell.item-name {
   width: 25%;
 }
 
-.items .table .row .cell.item-price {
+.items .ryutable .ryurow .cell.item-price {
   width: 15%;
 }
 
-.items .table .row .cell.item-weight {
+.items .ryutable .ryurow .cell.item-weight {
   width: 10%;
 }
 
-.items .table .row .cell.item-memo {
+.items .ryutable .ryurow .cell.item-memo {
   width: 50%;
 }
 
@@ -782,34 +782,34 @@ div.spells {
   margin-top: 1.3%;
 }
 
-.spells .table {
+.spells .ryutable {
   height: initial;
 }
 
-.spells .table .row {
+.spells .ryutable .ryurow {
   height: initial;
 }
 
-.spells .table .row .cell.spell-name {
+.spells .ryutable .ryurow .cell.spell-name {
   width: 20%;
 }
 
-.spells .table .row .cell.spell-mp {
+.spells .ryutable .ryurow .cell.spell-mp {
   width: 6%;
 }
 
-.spells .table .row .cell.spell-time {
+.spells .ryutable .ryurow .cell.spell-time {
   width: 15%;
 }
 
-.spells .table .row .cell.spell-taisho {
+.spells .ryutable .ryurow .cell.spell-taisho {
   width: 15%;
 }
 
-.spells .table .row .cell.spell-range {
+.spells .ryutable .ryurow .cell.spell-range {
   width: 14%;
 }
 
-.spells .table .row .cell.spell-memo {
+.spells .ryutable .ryurow .cell.spell-memo {
   width: 30%;
 }
