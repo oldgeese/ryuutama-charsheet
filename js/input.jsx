@@ -1,20 +1,8 @@
-// @flow
 import React from 'react';
 
-type State = {
-  charId: string,
-  mode: string,
-  searchString: string
-};
+class Input extends React.Component {
 
-class Input extends React.Component<State> {
-  state: State;
-  handleInputChange: (event: Event)=>void;
-  handleSubmit: (event: Event)=>void;
-  handleSubmitSearch: (event: Event)=>void;
-  handleClickSearchButton: (event: Event)=>void;
-
-  constructor(props: any) {
+  constructor(props) {
     super(props);
     this.state = {
       charId: "",
@@ -27,8 +15,9 @@ class Input extends React.Component<State> {
     this.handleSubmitSearch = this.handleSubmitSearch.bind(this);
     this.handleClickSearchButton = this.handleClickSearchButton.bind(this);
   }
-  handleInputChange(event: Event) {
-    let target: HTMLInputElement;
+
+  handleInputChange(event) {
+    let target;
     if (event.target instanceof HTMLInputElement) {
       const name = event.target.name;
       this.setState({
@@ -36,29 +25,32 @@ class Input extends React.Component<State> {
       });
     }
   }
-  handleSubmit(event: Event) {
+
+  handleSubmit(event) {
     event.preventDefault();
     if (this.state.charId) {
       const path = "/char/" + this.state.charId;
       this.props.history.push(path);
     }
   }
-  handleSubmitSearch(event: Event) {
+
+  handleSubmitSearch(event) {
     event.preventDefault();
-    let target: HTMLFormElement;
+    let target;
     if (event.target instanceof HTMLFormElement) {
-      // const path: string= "/char/?" + this.state.mode + "=" + encodeURIComponent(this.state.searchString);
-      const path: string= "/search/" + this.state.mode + "/" + encodeURIComponent(this.state.searchString);
+      const path = "/search/" + this.state.mode + "/" + encodeURIComponent(this.state.searchString);
       this.props.history.push(path);
     }
   }
-  handleClickSearchButton(event: Event) {
-    let target: HTMLInputElement;
+
+  handleClickSearchButton(event) {
+    let target;
     if (event.target instanceof HTMLInputElement) {
       const name = event.target.name;
       this.setState({mode: name});
     }
   }
+
   render() {
     document.title = "りゅうたまキャラシート";
     return (

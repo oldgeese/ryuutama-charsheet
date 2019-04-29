@@ -1,30 +1,9 @@
-// @flow
 import React from 'react';
 import {search} from './data.jsx';
 import {Link} from 'react-router-dom';
 
-type SearchResultJson = Array<SearchResult>;
-type SearchResult = {
-  [key:string]: string,
-};
-
-type SearchParams = {
-  mode: string,
-  searchString: string,
-};
-
-type Props = {
-  params: SearchParams
-};
-
 class Search extends React.Component {
-  state: {
-    param: SearchParams,
-    data: ?SearchResultJson,
-    error: ?Error,
-  };
-
-  constructor(props: Props) {
+  constructor(props) {
     super(props);
     this.state = {
       param: {mode: "", searchString:""},
@@ -32,7 +11,7 @@ class Search extends React.Component {
       error: null,
     };
   }
-  retrieveSearchResult(mode: string, searchString: string) {
+  retrieveSearchResult(mode, searchString) {
     this.setState({
       data: null,
       error: null,
@@ -49,17 +28,17 @@ class Search extends React.Component {
   componentDidMount() {
     const params = this.props.match.params;
     this.setState({param: params});
-    const mode: string = params.mode;
-    const searchString: string = params.searchString;
+    const mode = params.mode;
+    const searchString = params.searchString;
     if (mode && searchString) {
       this.retrieveSearchResult(mode, searchString);
     }
   }
-  componentWillReceiveProps(nextProps: Props) {
+  componentWillReceiveProps(nextProps) {
     const params = nextProps.match.params;
     this.setState({param: params});
-    const mode: string = params.mode;
-    const searchString: string = params.searchString;
+    const mode = params.mode;
+    const searchString = params.searchString;
     if (mode && searchString) {
       this.retrieveSearchResult(mode, searchString);
     }
