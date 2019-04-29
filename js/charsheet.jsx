@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import {sheetData} from './data.jsx';
 import {Link} from 'react-router-dom';
@@ -16,56 +15,47 @@ import image_star from '../images/star.png';
 import image_swords from '../images/swords.png';
 import image_tired from '../images/tired.png';
 
-type PropsWithChildren = {
-  className?: string,
-  children?: Element<any>,
-};
-
-type CharDataJson = {
-  [key:string]: string,
-};
-
-function joinIgnoreFalsy(list: Array<any>, separator: string=",") {
+function joinIgnoreFalsy(list, separator=",") {
   return list.filter((v)=>(v)).join(separator);
 }
 
-function Ryutable(props: PropsWithChildren) {
+function Ryutable(props) {
   return (
     <div className={"ryutable " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryurow(props: PropsWithChildren) {
+function Ryurow(props) {
   return (
     <div className={"ryurow " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryulabel(props: PropsWithChildren) {
+function Ryulabel(props) {
   return (
     <div className={"cell label " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function Ryudata(props: PropsWithChildren) {
+function Ryudata(props) {
   return (
     <div className={"cell data " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyutamaSheetTitle(props: PropsWithChildren) {
+function RyutamaSheetTitle(props) {
   return (
     <div className={"title-area " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyuCharFigure(props: PropsWithChildren) {
+function RyuCharFigure(props) {
   return (
     <div className={"figure-area " + (props.className || "")}>{props.children}</div>
   );
 }
 
-function RyutamaClass(props: {data: CharDataJson}) {
+function RyutamaClass(props) {
   const d = props.data;
   return (
     <Ryutable className="class">
@@ -111,10 +101,10 @@ function RyutamaClass(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaFeature(props: {data: CharDataJson}) {
+function RyutamaFeature(props) {
   const d = props.data;
 
-  let prof_equip: Array<string> = [];
+  let prof_equip = [];
   if (d.equip_tanken) {
     prof_equip.push("短剣");
   }
@@ -134,7 +124,7 @@ function RyutamaFeature(props: {data: CharDataJson}) {
     prof_equip.push("素手");
   }
 
-  let prof_topography: Array<string> = [];
+  let prof_topography = [];
   const topo_map = {
     "LS1":"草原",
     "LS2":"荒野",
@@ -193,7 +183,7 @@ function RyutamaFeature(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaCheck(props: {data: CharDataJson}) {
+function RyutamaCheck(props) {
   const d = props.data;
   return (
     <Ryutable className="check">
@@ -266,7 +256,7 @@ function RyutamaCheck(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaEquipment(props: {data: CharDataJson}) {
+function RyutamaEquipment(props) {
   const d = props.data;
   return (
     <div className="equipment">
@@ -491,7 +481,7 @@ function RyutamaEquipment(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaModifier(props: {data: CharDataJson}) {
+function RyutamaModifier(props) {
   const d = props.data;
   return (
     <div className="modifier">
@@ -636,7 +626,7 @@ function RyutamaModifier(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaBadStatus(props: {data: CharDataJson}) {
+function RyutamaBadStatus(props) {
   const d = props.data;
   return (
     <div className="badstatus">
@@ -731,7 +721,7 @@ function Copyright() {
   );
 }
 
-function RyutamaCharAndPLName(props: {data: CharDataJson}) {
+function RyutamaCharAndPLName(props) {
   const d = props.data;
   return (
     <div className="char-and-plname">
@@ -751,7 +741,7 @@ function RyutamaCharAndPLName(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaPossessions(props: {data: CharDataJson}) {
+function RyutamaPossessions(props) {
   const d = props.data;
   return (
     <div className="possessions">
@@ -771,7 +761,7 @@ function RyutamaPossessions(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaItems(props: {data: CharDataJson}) {
+function RyutamaItems(props) {
   const d = props.data;
   return (
     <div className="items">
@@ -803,7 +793,7 @@ function RyutamaItems(props: {data: CharDataJson}) {
   );
 }
 
-function RyutamaSpells(props:  {data: CharDataJson}) {
+function RyutamaSpells(props) {
   const d = props.data;
   return (
     <div className="spells">
@@ -919,19 +909,8 @@ class RyutamaSheet extends React.Component {
   }
 }
 
-type CharSheetProps = {
-  params: {charId: string},
-  charId: string,
-};
-
 class CharSheet extends React.Component {
-  state: {
-    charId: string,
-    data: CharDataJson,
-    error: ?Error,
-  };
-
-  constructor(props: CharSheetProps) {
+  constructor(props) {
     super(props);
     this.state = {
       charId: "",
@@ -939,7 +918,8 @@ class CharSheet extends React.Component {
       error: null,
     };
   }
-  retrieveSheetData(charId: string) {
+
+  retrieveSheetData(charId) {
     this.setState({
       charId: charId,
       data: {},
@@ -965,7 +945,7 @@ class CharSheet extends React.Component {
     this.setState({charId: charId});
     this.retrieveSheetData(charId);
   }
-  componentWillReceiveProps(nextProps: CharSheetProps) {
+  componentWillReceiveProps(nextProps) {
     let charId = this.state.charId;
     const params = nextProps.match.params;
     if (nextProps.charId) {

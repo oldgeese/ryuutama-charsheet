@@ -1,30 +1,26 @@
-// @flow
 import request from 'superagent';
 import jsonp from 'superagent-jsonp';
 
-const baseUrl: string = "https://charasheet.vampire-blood.net/";
-const postfix: string = ".json"
-const timeout: number = 10000;
-const numIdLength: number = 7;
-const searchBaseUrl: string = baseUrl + "list_ryutama.json";
+const baseUrl = "https://charasheet.vampire-blood.net/";
+const postfix = ".json"
+const timeout = 10000;
+const numIdLength = 7;
+const searchBaseUrl = baseUrl + "list_ryutama.json";
 
-type QueryObject = {
-  [mode: string]: string
-}
-
-export function sheetData(id: string) {
-  const isMD5: boolean|string = id && id.length > numIdLength;
+export function sheetData(id) {
+  const isMD5 = id && id.length > numIdLength;
   if (isMD5) {
     id = 'm' + id;
   }
   return getJsonp(baseUrl + id + postfix);
 }
 
-export function search(mode:string, searchString: string) {
+export function search(mode, searchString) {
   return getJsonp(searchBaseUrl, {[mode]: searchString});
+
 }
 
-function getJsonp(url: string, query?: QueryObject) {
+function getJsonp(url, query) {
   let requested = request.get(url);
   if (query) {
     requested = requested.query(query);
