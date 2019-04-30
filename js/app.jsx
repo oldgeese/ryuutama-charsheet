@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import Input from './input.jsx';
 import CharSheet from './charsheet.jsx';
