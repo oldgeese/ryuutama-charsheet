@@ -17,7 +17,6 @@ class Input extends React.Component {
   }
 
   handleInputChange(event) {
-    let target;
     if (event.target instanceof HTMLInputElement) {
       const name = event.target.name;
       this.setState({
@@ -36,7 +35,6 @@ class Input extends React.Component {
 
   handleSubmitSearch(event) {
     event.preventDefault();
-    let target;
     if (event.target instanceof HTMLFormElement) {
       const path = "/search/" + this.state.mode + "/" + encodeURIComponent(this.state.searchString);
       this.props.history.push(path);
@@ -44,7 +42,6 @@ class Input extends React.Component {
   }
 
   handleClickSearchButton(event) {
-    let target;
     if (event.target instanceof HTMLInputElement) {
       const name = event.target.name;
       this.setState({mode: name});
@@ -70,7 +67,7 @@ class Input extends React.Component {
           <div className="form-group">
             <label>検索</label>
             <input className="form-control" type="text" size="60" name="searchString"
-              value={this.state.searchString} onChange={this.handleInputChange} />
+              onChange={this.handleInputChange} />
           </div>
           <input className="btn btn-primary" type="submit" name="tag" value="タグ検索"  onClick={this.handleClickSearchButton}/>
           {' '}
@@ -83,7 +80,7 @@ class Input extends React.Component {
           <div className="form-group">
             <label>ID入力</label>
             <input className="form-control" type="text" size="60" name="charId"
-              value={this.state.charId} onChange={this.handleInputChange} />
+              onChange={this.handleInputChange} />
           </div>
           <div>
             <input className="btn btn-primary" type="submit" value="入力" />
