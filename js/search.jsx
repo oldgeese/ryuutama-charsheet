@@ -6,7 +6,6 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      param: {mode: "", searchString:""},
       data: null,
       error: null,
     };
@@ -26,19 +25,7 @@ class Search extends React.Component {
     });
   }
   componentDidMount() {
-    const params = this.props.match.params;
-    this.setState({param: params});
-    const mode = params.mode;
-    const searchString = params.searchString;
-    if (mode && searchString) {
-      this.retrieveSearchResult(mode, searchString);
-    }
-  }
-  componentWillReceiveProps(nextProps) {
-    const params = nextProps.match.params;
-    this.setState({param: params});
-    const mode = params.mode;
-    const searchString = params.searchString;
+    const {mode, searchString} = this.props.match.params;
     if (mode && searchString) {
       this.retrieveSearchResult(mode, searchString);
     }
