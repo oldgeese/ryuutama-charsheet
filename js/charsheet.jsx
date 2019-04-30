@@ -1,7 +1,6 @@
 import React from 'react';
 import {sheetData} from './data.jsx';
 import {Link} from 'react-router-dom';
-// import css from '../css/style.css';
 import bowser from 'bowser';
 import image_condition from '../images/condition.png';
 import image_fumble from '../images/fumble.png';
@@ -935,30 +934,7 @@ class CharSheet extends React.Component {
     });
   }
   componentDidMount() {
-    let charId = this.state.charId;
-    const params = this.props.match.params;
-    if (params) {
-      charId = params.charId;
-    } else {
-      charId = this.props.charId;
-    }
-    this.setState({charId: charId});
-    this.retrieveSheetData(charId);
-  }
-  componentWillReceiveProps(nextProps) {
-    let charId = this.state.charId;
-    const params = nextProps.match.params;
-    if (nextProps.charId) {
-      charId = nextProps.charId;
-    } else if (params) {
-      charId = params.charId;
-    }
-
-    if (charId === this.state.charId) {
-      return;
-    }
-
-    this.setState({charId: charId});
+    const {charId} = this.props.match.params;
     this.retrieveSheetData(charId);
   }
   render() {
