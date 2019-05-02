@@ -1,27 +1,22 @@
 import React from 'react';
 import {search} from './data.jsx';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {searchStart, searchSuccess, searchFail} from './actions';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: null,
-      error: null,
-    };
   }
   retrieveSearchResult(mode, searchString) {
-    this.setState({
-      data: null,
-      error: null,
-    });
+    this.props.searchStart();
     search(mode, searchString).then((res) => {
       if (res.body) {
-        this.setState({data: res.body});
+        this.props.searchSuccess(res.body);
       }
     }).catch((err) => {
       console.error(err);
-      this.setState({error: err});
+      this.props.searchFail(err);
     });
   }
   componentDidMount() {
@@ -31,8 +26,8 @@ class Search extends React.Component {
     }
   }
   render() {
-    const d = this.state.data;
-    if (this.state.error) {
+    const d = this.props.data;
+    if (this.props.error) {
       return (
         <div>
           エラーが発生しました。
@@ -75,4 +70,24 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+const mapStateToProps = state => {
+  return {
+    data : state.data,
+    error : state.error,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    searchStart : () => {dispatch(searchStart())},
+    searchSuccess : (data) => {dispatch(searchSuccess(data))},
+    searchFail : (error) => {dispatch(searchFail(error))},
+  }
+}
+
+const ConnectedSearch = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Search);
+
+export default ConnectedSearch;
