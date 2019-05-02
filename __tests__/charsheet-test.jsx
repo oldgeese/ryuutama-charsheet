@@ -16,14 +16,11 @@ test('full DOM rendering', () => {
       <CharSheetWithRouter charId="962930"/>
     </MemoryRouter>
   );
-  // let tree = wrapper.debug();
-  // console.log(tree);
   expect(wrapper.find('CharSheet')).toHaveLength(1);
 
   return sheetData("962930")
     .then((res) => {
       wrapper.update();
-      // console.log(wrapper.debug());
       expect(wrapper.find('CharSheet')).toHaveLength(1);
       expect(wrapper.find('RyutamaSheet')).toHaveLength(1);
     });
